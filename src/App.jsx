@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import MobileMenu from './components/MobileMenu';
@@ -8,6 +8,7 @@ import ReferenceOverlay from './components/ReferenceOverlay';
 export default function App() {
   const [activeModal, setActiveModal] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [bgZoom, setBgZoom] = useState(88);
 
   const handleOpenModal = (modalId) => {
     setActiveModal(modalId);
@@ -25,9 +26,9 @@ export default function App() {
         onToggleMobileMenu={() => setIsMobileMenuOpen(true)}
       />
 
-      {/* Hero Landing Section */}
+      {/* Hero Landing Section with dynamic zoom */}
       <main>
-        <Hero />
+        <Hero zoom={bgZoom} />
       </main>
 
       {/* Mobile Drawer Menu */}
@@ -44,7 +45,7 @@ export default function App() {
       />
 
       {/* Pixel Comparison & Inspector Widget */}
-      <ReferenceOverlay />
+      <ReferenceOverlay zoom={bgZoom} setZoom={setBgZoom} />
     </div>
   );
 }

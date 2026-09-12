@@ -1,7 +1,7 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { Sliders, Eye, EyeOff, Layers, CheckCircle2 } from 'lucide-react';
 
-export default function ReferenceOverlay() {
+export default function ReferenceOverlay({ zoom, setZoom }) {
   const [isOpen, setIsOpen] = useState(false);
   const [opacity, setOpacity] = useState(50);
   const [isOverlayActive, setIsOverlayActive] = useState(false);
@@ -52,8 +52,24 @@ export default function ReferenceOverlay() {
               </button>
             </div>
 
+            {/* Background Zoom Slider */}
+            <div className="space-y-1.5 pt-0.5">
+              <div className="flex justify-between text-[11px] text-stone-25">
+                <span>Background Zoom</span>
+                <span className="font-bold text-white">{zoom}%</span>
+              </div>
+              <input
+                type="range"
+                min="70"
+                max="120"
+                value={zoom}
+                onChange={(e) => setZoom(Number(e.target.value))}
+                className="w-full h-1.5 bg-stone/40 rounded-lg appearance-none cursor-pointer accent-aubergine"
+              />
+            </div>
+
             {/* Toggle Overlay */}
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between pt-1">
               <span className="text-stone-25">Reference Overlay:</span>
               <button
                 onClick={() => setIsOverlayActive(!isOverlayActive)}
@@ -125,7 +141,7 @@ export default function ReferenceOverlay() {
             )}
 
             <p className="text-[10px] text-stone-50 pt-1 leading-tight">
-              Overlay aligns the original user screenshot 1:1 on top of live rendered HTML elements for pixel alignment verification.
+              Adjust background zoom or toggle the reference overlay 1:1 on top of live rendered HTML elements.
             </p>
           </div>
         )}
