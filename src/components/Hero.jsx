@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 
 export default function Hero() {
   return (
@@ -7,7 +7,7 @@ export default function Hero() {
       <div className="absolute inset-0 w-full h-full">
         <img
           src="/images/hero_bg.jpg"
-          alt="Two people sitting together by a fountain in the park"
+          alt="Couple in white running across a meadow towards trees"
           className="w-full h-full object-cover object-center"
           loading="eager"
           decoding="async"
