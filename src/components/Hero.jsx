@@ -1,11 +1,11 @@
 import React from 'react';
 
-export default function Hero({ zoom = 88 }) {
+export default function Hero({ zoom = 100 }) {
   const scaleValue = zoom / 100;
   return (
     <section className="relative w-full h-screen min-h-[640px] overflow-hidden select-none">
       {/* Ambient backdrop to seamlessly blend zoomed-out edges */}
-      <div className="absolute inset-0 w-full h-full overflow-hidden bg-[#182015]">
+      <div className="absolute inset-0 w-full h-full overflow-hidden bg-[#1a282c]">
         <img
           src="/images/hero_bg.jpg"
           alt=""
@@ -18,7 +18,7 @@ export default function Hero({ zoom = 88 }) {
       <div className="absolute inset-0 w-full h-full flex items-center justify-center overflow-hidden">
         <img
           src="/images/hero_bg.jpg"
-          alt="Couple in white running across a meadow towards trees"
+          alt="Couple standing in a blooming wildflower field looking out at mountains"
           style={{ transform: `scale(${scaleValue})` }}
           className="w-full h-full object-cover object-center transition-transform duration-500 ease-out origin-center"
           loading="eager"

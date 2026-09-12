@@ -8,7 +8,7 @@ import ReferenceOverlay from './components/ReferenceOverlay';
 export default function App() {
   const [activeModal, setActiveModal] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [bgZoom, setBgZoom] = useState(88);
+  const [bgZoom, setBgZoom] = useState(100);
 
   const handleOpenModal = (modalId) => {
     setActiveModal(modalId);
