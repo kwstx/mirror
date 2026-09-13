@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import QuoteSection from './components/QuoteSection';
 import HingeLabsSection from './components/HingeLabsSection';
+import MusicModeSection from './components/MusicModeSection';
 import MobileMenu from './components/MobileMenu';
 import ActionModal from './components/ActionModal';
 import ReferenceOverlay from './components/ReferenceOverlay';
@@ -40,6 +41,8 @@ export default function App() {
         <QuoteSection />
         {/* Pixel-Perfect Hinge Labs Section */}
         <HingeLabsSection />
+        {/* Pixel-Perfect Music Mode (No skips) Section */}
+        <MusicModeSection />
       </main>
 
       {/* Mobile Drawer Menu */}

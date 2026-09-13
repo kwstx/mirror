@@ -6,13 +6,14 @@ export default function ReferenceOverlay({ zoom, setZoom, onReplayAnimation }) {
   const [opacity, setOpacity] = useState(50);
   const [isOverlayActive, setIsOverlayActive] = useState(false);
   const [blendMode, setBlendMode] = useState('normal'); // 'normal' or 'difference'
-  const [activeSection, setActiveSection] = useState('labs'); // 'labs', 'quote', or 'hero'
+  const [activeSection, setActiveSection] = useState('music'); // 'music', 'labs', 'quote', or 'hero'
 
   const handleSelectSection = (section) => {
     setActiveSection(section);
     let targetId = 'hero-section';
     if (section === 'quote') targetId = 'quote-section';
     if (section === 'labs') targetId = 'labs-section';
+    if (section === 'music') targetId = 'music-mode-section';
     const el = document.getElementById(targetId);
     if (el) {
       el.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -36,6 +37,16 @@ export default function ReferenceOverlay({ zoom, setZoom, onReplayAnimation }) {
               alt="Reference screenshot"
               className="w-full h-full object-cover object-center"
             />
+          ) : activeSection === 'music' ? (
+            <div className="w-full h-full flex justify-center items-start">
+              <div className="w-full max-w-[1024px] pointer-events-none">
+                <img
+                  src="/images/no_skips_reference.png"
+                  alt="Music Mode reference screenshot"
+                  className="w-full h-auto object-contain object-top"
+                />
+              </div>
+            </div>
           ) : activeSection === 'labs' ? (
             <div className="w-full h-full flex justify-center items-start">
               <div className="w-full max-w-[1024px] pointer-events-none">
@@ -89,10 +100,20 @@ export default function ReferenceOverlay({ zoom, setZoom, onReplayAnimation }) {
             {/* Target Section Selector */}
             <div className="space-y-1.5">
               <span className="text-stone-25 text-[11px]">Compare Section:</span>
-              <div className="grid grid-cols-3 gap-1">
+              <div className="grid grid-cols-4 gap-1">
+                <button
+                  onClick={() => handleSelectSection('music')}
+                  className={`py-1 px-1 rounded-md font-bold text-[10.5px] transition-colors ${
+                    activeSection === 'music'
+                      ? 'bg-pink-600 text-white shadow-sm'
+                      : 'bg-stone/30 text-stone-50 hover:text-white'
+                  }`}
+                >
+                  Music
+                </button>
                 <button
                   onClick={() => handleSelectSection('labs')}
-                  className={`py-1 px-1.5 rounded-md font-bold text-[11px] transition-colors ${
+                  className={`py-1 px-1 rounded-md font-bold text-[10.5px] transition-colors ${
                     activeSection === 'labs'
                       ? 'bg-aubergine text-white shadow-sm'
                       : 'bg-stone/30 text-stone-50 hover:text-white'
@@ -102,7 +123,7 @@ export default function ReferenceOverlay({ zoom, setZoom, onReplayAnimation }) {
                 </button>
                 <button
                   onClick={() => handleSelectSection('quote')}
-                  className={`py-1 px-1.5 rounded-md font-bold text-[11px] transition-colors ${
+                  className={`py-1 px-1 rounded-md font-bold text-[10.5px] transition-colors ${
                     activeSection === 'quote'
                       ? 'bg-tinderRed text-white shadow-sm'
                       : 'bg-stone/30 text-stone-50 hover:text-white'
@@ -112,7 +133,7 @@ export default function ReferenceOverlay({ zoom, setZoom, onReplayAnimation }) {
                 </button>
                 <button
                   onClick={() => handleSelectSection('hero')}
-                  className={`py-1 px-1.5 rounded-md font-bold text-[11px] transition-colors ${
+                  className={`py-1 px-1 rounded-md font-bold text-[10.5px] transition-colors ${
                     activeSection === 'hero'
                       ? 'bg-aubergine text-white shadow-sm'
                       : 'bg-stone/30 text-stone-50 hover:text-white'
