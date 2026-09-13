@@ -1,6 +1,6 @@
-﻿# Hinge Landing Page Recreation
+# Mirror Landing Page Recreation
 
-Pixel-perfect recreation of the Hinge landing page hero section with official brand typography (Tiempos Headline, Modern Era), master 4K background imagery, vector brand wordmark, responsive drawer navigation, interactive feature modals, and a built-in Pixel Match Inspector tool.
+Pixel-perfect recreation of the Mirror landing page hero section with official brand typography (Tiempos Headline, Modern Era), master 4K background imagery, brand wordmark, responsive drawer navigation, interactive feature modals, and a built-in Pixel Match Inspector tool.
 
 ## Tech Stack
 - React 19

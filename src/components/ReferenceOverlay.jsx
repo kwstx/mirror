@@ -1,28 +1,62 @@
 import React, { useState } from 'react';
-import { Sliders, Eye, EyeOff, Layers, CheckCircle2 } from 'lucide-react';
+import { Sliders, Eye, EyeOff, Layers, CheckCircle2, RotateCcw } from 'lucide-react';
 
-export default function ReferenceOverlay({ zoom, setZoom }) {
+export default function ReferenceOverlay({ zoom, setZoom, onReplayAnimation }) {
   const [isOpen, setIsOpen] = useState(false);
   const [opacity, setOpacity] = useState(50);
   const [isOverlayActive, setIsOverlayActive] = useState(false);
   const [blendMode, setBlendMode] = useState('normal'); // 'normal' or 'difference'
+  const [activeSection, setActiveSection] = useState('labs'); // 'labs', 'quote', or 'hero'
+
+  const handleSelectSection = (section) => {
+    setActiveSection(section);
+    let targetId = 'hero-section';
+    if (section === 'quote') targetId = 'quote-section';
+    if (section === 'labs') targetId = 'labs-section';
+    const el = document.getElementById(targetId);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
 
   return (
     <>
       {/* Reference Image Layer Overlay */}
       {isOverlayActive && (
         <div
-          className="fixed inset-0 z-30 pointer-events-none select-none transition-opacity duration-150"
+          className="fixed inset-0 z-30 pointer-events-none select-none transition-opacity duration-150 overflow-hidden"
           style={{
             opacity: opacity / 100,
             mixBlendMode: blendMode,
           }}
         >
-          <img
-            src="/images/reference.jpg"
-            alt="Reference screenshot"
-            className="w-full h-full object-cover object-center"
-          />
+          {activeSection === 'hero' ? (
+            <img
+              src="/images/reference.jpg"
+              alt="Reference screenshot"
+              className="w-full h-full object-cover object-center"
+            />
+          ) : activeSection === 'labs' ? (
+            <div className="w-full h-full flex justify-center items-start">
+              <div className="w-full max-w-[1024px] pointer-events-none">
+                <img
+                  src="/images/hinge_labs_reference.png"
+                  alt="Hinge Labs reference screenshot"
+                  className="w-full h-auto object-contain object-top"
+                />
+              </div>
+            </div>
+          ) : (
+            <div className="w-full h-full flex justify-center items-start">
+              <div className="w-full max-w-[1024px] pointer-events-none">
+                <img
+                  src="/images/quote_reference.png"
+                  alt="Quote reference screenshot"
+                  className="w-full h-auto object-contain object-top"
+                />
+              </div>
+            </div>
+          )}
         </div>
       )}
 
@@ -52,21 +86,60 @@ export default function ReferenceOverlay({ zoom, setZoom }) {
               </button>
             </div>
 
-            {/* Background Zoom Slider */}
-            <div className="space-y-1.5 pt-0.5">
-              <div className="flex justify-between text-[11px] text-stone-25">
-                <span>Background Zoom</span>
-                <span className="font-bold text-white">{zoom}%</span>
+            {/* Target Section Selector */}
+            <div className="space-y-1.5">
+              <span className="text-stone-25 text-[11px]">Compare Section:</span>
+              <div className="grid grid-cols-3 gap-1">
+                <button
+                  onClick={() => handleSelectSection('labs')}
+                  className={`py-1 px-1.5 rounded-md font-bold text-[11px] transition-colors ${
+                    activeSection === 'labs'
+                      ? 'bg-aubergine text-white shadow-sm'
+                      : 'bg-stone/30 text-stone-50 hover:text-white'
+                  }`}
+                >
+                  Labs
+                </button>
+                <button
+                  onClick={() => handleSelectSection('quote')}
+                  className={`py-1 px-1.5 rounded-md font-bold text-[11px] transition-colors ${
+                    activeSection === 'quote'
+                      ? 'bg-tinderRed text-white shadow-sm'
+                      : 'bg-stone/30 text-stone-50 hover:text-white'
+                  }`}
+                >
+                  Quote
+                </button>
+                <button
+                  onClick={() => handleSelectSection('hero')}
+                  className={`py-1 px-1.5 rounded-md font-bold text-[11px] transition-colors ${
+                    activeSection === 'hero'
+                      ? 'bg-aubergine text-white shadow-sm'
+                      : 'bg-stone/30 text-stone-50 hover:text-white'
+                  }`}
+                >
+                  Hero
+                </button>
               </div>
-              <input
-                type="range"
-                min="70"
-                max="120"
-                value={zoom}
-                onChange={(e) => setZoom(Number(e.target.value))}
-                className="w-full h-1.5 bg-stone/40 rounded-lg appearance-none cursor-pointer accent-aubergine"
-              />
             </div>
+
+            {/* Background Zoom Slider (Hero only) */}
+            {activeSection === 'hero' && (
+              <div className="space-y-1.5 pt-0.5">
+                <div className="flex justify-between text-[11px] text-stone-25">
+                  <span>Background Zoom</span>
+                  <span className="font-bold text-white">{zoom}%</span>
+                </div>
+                <input
+                  type="range"
+                  min="70"
+                  max="120"
+                  value={zoom}
+                  onChange={(e) => setZoom(Number(e.target.value))}
+                  className="w-full h-1.5 bg-stone/40 rounded-lg appearance-none cursor-pointer accent-aubergine"
+                />
+              </div>
+            )}
 
             {/* Toggle Overlay */}
             <div className="flex items-center justify-between pt-1">
@@ -75,7 +148,7 @@ export default function ReferenceOverlay({ zoom, setZoom }) {
                 onClick={() => setIsOverlayActive(!isOverlayActive)}
                 className={`flex items-center space-x-1.5 px-3 py-1 rounded-full text-xs font-bold transition-colors ${
                   isOverlayActive
-                    ? 'bg-aubergine text-white'
+                    ? activeSection === 'quote' ? 'bg-tinderRed text-white' : 'bg-aubergine text-white'
                     : 'bg-stone/40 text-stone-50 hover:text-white'
                 }`}
               >
@@ -140,8 +213,25 @@ export default function ReferenceOverlay({ zoom, setZoom }) {
               </div>
             )}
 
+            {/* Replay Intro Animation Control */}
+            {onReplayAnimation && (
+              <div className="pt-1">
+                <button
+                  onClick={() => {
+                    onReplayAnimation();
+                    const el = document.getElementById('hero-section');
+                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }}
+                  className="w-full flex items-center justify-center space-x-2 py-2 px-3 rounded-lg bg-gradient-to-r from-aubergine to-pink-900 hover:opacity-90 text-white font-bold text-xs transition-all shadow-md active:scale-95"
+                >
+                  <RotateCcw className="w-3.5 h-3.5 text-white" />
+                  <span>Replay Load Animation</span>
+                </button>
+              </div>
+            )}
+
             <p className="text-[10px] text-stone-50 pt-1 leading-tight">
-              Adjust background zoom or toggle the reference overlay 1:1 on top of live rendered HTML elements.
+              Toggle reference overlay 1:1 on top of the live page to inspect pixel perfection.
             </p>
           </div>
         )}

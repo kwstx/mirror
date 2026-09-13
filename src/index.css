@@ -1,4 +1,4 @@
-﻿@tailwind base;
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -66,6 +66,66 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Society';
+  src: url('/fonts/Society_600_normal.woff2') format('woff2'),
+       url('/fonts/Society_600_normal.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Society';
+  src: url('/fonts/Society_600_italic.woff2') format('woff2'),
+       url('/fonts/Society_600_italic.ttf') format('truetype');
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Society';
+  src: url('/fonts/Society_800_normal.woff2') format('woff2'),
+       url('/fonts/Society_800_normal.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Society';
+  src: url('/fonts/Society_800_italic.woff2') format('woff2'),
+       url('/fonts/Society_800_italic.ttf') format('truetype');
+  font-style: italic;
+  font-weight: 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('/fonts/ProximaNova_normal_normal.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('/fonts/ProximaNova_600_normal.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('/fonts/ProximaNova_800_normal.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -85,3 +145,79 @@ html, body {
   background-color: #67295f;
   color: #fffefd;
 }
+
+/* Hero Page Load Entrance Animation (Bottom to Top) */
+@keyframes heroBottomToTop {
+  0% {
+    opacity: 0;
+    transform: translateY(65px) scale(1.02);
+    filter: blur(10px);
+  }
+  40% {
+    opacity: 0.85;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0px);
+  }
+}
+
+@keyframes heroAmbientBottomToTop {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(1.15);
+  }
+  100% {
+    opacity: 0.5;
+    transform: translateY(0) scale(1.25);
+  }
+}
+
+@keyframes heroHeadlineReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-bg-animating {
+  animation: heroBottomToTop 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transform-origin: center bottom;
+  will-change: transform, opacity, filter;
+}
+
+.hero-ambient-animating {
+  animation: heroAmbientBottomToTop 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity;
+}
+
+.hero-headline-animating {
+  animation: heroHeadlineReveal 1.3s cubic-bezier(0.16, 1, 0.3, 1) 0.35s both;
+  will-change: transform, opacity;
+}
+
+/* Quote Section Letter-by-Letter Entrance Animation */
+@keyframes letterFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0px);
+  }
+}
+
+.letter-fade-in {
+  opacity: 0;
+  animation: letterFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity, filter;
+}
+

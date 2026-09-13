@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { X, Heart, Sparkles, Award, Globe, Briefcase, Download, ExternalLink } from 'lucide-react';
 
 export default function ActionModal({ activeModal, onClose }) {
@@ -12,7 +12,7 @@ export default function ActionModal({ activeModal, onClose }) {
       body: (
         <div className="space-y-4 text-stone-25 font-modern text-[15px] leading-relaxed">
           <p>
-            Hinge is built on the belief that anyone looking for love should be able to find it. In a world of infinite swiping, Hinge exists to help you go on great dates and find a meaningful relationship.
+            Mirror is built on the belief that anyone looking for love should be able to find it. In a world of infinite swiping, Mirror exists to help you go on great dates and find a meaningful relationship.
           </p>
           <p>
             Our core mission is reflected in every product decision: we measure our success not by time spent in the app, but by dates set up in the real world.
@@ -33,7 +33,7 @@ export default function ActionModal({ activeModal, onClose }) {
       body: (
         <div className="space-y-4 text-stone-25 font-modern text-[15px] leading-relaxed">
           <p>
-            Loneliness has become an epidemic among Gen Z and young adults. Through our <strong>One More Hour</strong> initiative, Hinge is mobilizing resources and grants to help people spend more time connecting in real life.
+            Loneliness has become an epidemic among Gen Z and young adults. Through our <strong>One More Hour</strong> initiative, Mirror is mobilizing resources and grants to help people spend more time connecting in real life.
           </p>
           <p>
             We partner with community spaces, cultural venues, and local hubs to facilitate meaningful, tech-free human interactions.
@@ -52,7 +52,7 @@ export default function ActionModal({ activeModal, onClose }) {
       ),
     },
     labs: {
-      title: 'Hinge Labs',
+      title: 'Mirror Labs',
       subtitle: 'We are love scientists',
       icon: Sparkles,
       body: (
@@ -61,12 +61,12 @@ export default function ActionModal({ activeModal, onClose }) {
             Our in-house team of relationship researchers, behavioral scientists, and matchmakers study what makes daters click. We analyze date outcomes, communication patterns, and connection signals.
           </p>
           <p>
-            Key findings from Hinge Labs have helped eliminate ghosting, introduce voice prompts, and develop "We Met" feedback to continually refine match quality.
+            Key findings from Mirror Labs have helped eliminate ghosting, introduce voice prompts, and develop "We Met" feedback to continually refine match quality.
           </p>
           <div className="bg-[#242424] p-4 rounded-xl border border-stone/30 mt-4">
             <span className="text-xs uppercase tracking-widest text-aubergine-25 font-bold block mb-1">Key Stat</span>
             <p className="font-tiempos text-base text-white">
-              "3 out of 4 second dates on Hinge lead to ongoing relationships."
+              "3 out of 4 second dates on Mirror lead to ongoing relationships."
             </p>
           </div>
         </div>
@@ -74,18 +74,18 @@ export default function ActionModal({ activeModal, onClose }) {
     },
     newsroom: {
       title: 'Newsroom & Press',
-      subtitle: 'Hinge in the headlines',
+      subtitle: 'Mirror in the headlines',
       icon: Award,
       body: (
         <div className="space-y-4 text-stone-25 font-modern text-[15px] leading-relaxed">
           <p>
-            Access official press releases, brand assets, executive bios, and research publications from the Hinge team.
+            Access official press releases, brand assets, executive bios, and research publications from the Mirror team.
           </p>
           <div className="space-y-2 mt-4">
             <div className="p-3 bg-[#242424] rounded-lg border border-stone/30 flex items-center justify-between">
               <div>
                 <span className="text-xs text-stone-50">September 2026</span>
-                <p className="text-white text-sm font-medium">Hinge Expands Global Connection Initiative</p>
+                <p className="text-white text-sm font-medium">Mirror Expands Global Connection Initiative</p>
               </div>
               <ExternalLink className="w-4 h-4 text-stone-50" />
             </div>
@@ -101,7 +101,7 @@ export default function ActionModal({ activeModal, onClose }) {
       ),
     },
     careers: {
-      title: 'Work at Hinge',
+      title: 'Work at Mirror',
       subtitle: "Let's work together",
       icon: Briefcase,
       body: (
@@ -122,7 +122,7 @@ export default function ActionModal({ activeModal, onClose }) {
       ),
     },
     download: {
-      title: 'Download Hinge',
+      title: 'Download Mirror',
       subtitle: 'Scan with your phone to get the app',
       icon: Download,
       body: (
