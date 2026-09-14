@@ -46,8 +46,8 @@ export default function HingeLabsSection() {
         >
           <div className="w-full max-w-[491px] h-[300px] sm:h-[350px] md:h-[393px] overflow-hidden rounded-[8px] md:rounded-l-none md:rounded-r-[8px] shadow-none">
             <img
-              src="/images/hinge_labs_couple.png"
-              alt="Hinge Labs researchers and daters enjoying a conversation"
+              src="/images/better_way_to_date.jpg"
+              alt="Happy couple embracing"
               className="w-full h-full object-cover object-center"
               loading="lazy"
             />
