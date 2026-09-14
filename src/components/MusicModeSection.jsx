@@ -45,19 +45,17 @@ export default function MusicModeSection() {
         >
           {/* Section Headline */}
           <h2 className="font-tiempos font-bold text-[28px] sm:text-[32px] md:text-[35.5px] leading-[1.05] tracking-[-0.015em] text-[#350322] antialiased mb-[13px]">
-            No skips
+            Forget your type
           </h2>
 
           {/* Section Description Paragraph */}
-          <p className="font-modern font-normal text-[13px] md:text-[13.5px] leading-[17px] text-[#360524] tracking-[0.002em] max-w-[500px] antialiased">
+          <p className="font-modern font-normal text-[13px] md:text-[13.5px] leading-[18px] md:leading-[20px] text-[#360524] tracking-[0.002em] max-w-[650px] antialiased">
             <span className="block md:whitespace-nowrap">
-              Put what you're listening to on your profile.{' '}
-              <strong className="font-bold text-[#350322]">Music Mode</strong> shows you people who
+              Your type might be exactly what’s holding you back. Our AI looks at who you are,
             </span>
             <span className="block md:whitespace-nowrap">
-              are out there with similar good taste. Forget "hey," your playlist just became your
+              who you choose, and who actually fits you to find the connection you didn’t know to look for.
             </span>
-            <span className="block md:whitespace-nowrap">best opener.</span>
           </p>
         </div>
 
