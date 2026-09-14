@@ -62,7 +62,7 @@ export default function Hero({ zoom = 100, animKey = 0 }) {
         <div className="w-full px-6 md:px-12 lg:px-16">
           <h1 className="font-tiempos font-semibold text-white tracking-[-0.012em] leading-[1.08] text-[2.75rem] sm:text-[3.5rem] md:text-[4.25rem] lg:text-[4.85rem] xl:text-[5.25rem] drop-shadow-[0_2px_8px_rgba(0,0,0,0.25)] max-w-5xl">
             The dating app<br />
-            designed to be deleted<span className="inline-block text-[0.38em] align-super ml-1.5 font-modern font-normal tracking-normal select-none -translate-y-1">™</span>
+            that finds your person<span className="inline-block text-[0.38em] align-super ml-1.5 font-modern font-normal tracking-normal select-none -translate-y-1">™</span>
           </h1>
         </div>
       </div>

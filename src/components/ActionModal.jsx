@@ -7,7 +7,7 @@ export default function ActionModal({ activeModal, onClose }) {
   const contentMap = {
     mission: {
       title: 'Our Mission',
-      subtitle: 'The dating app designed to be deleted',
+      subtitle: 'The dating app that finds your person',
       icon: Heart,
       body: (
         <div className="space-y-4 text-stone-25 font-modern text-[15px] leading-relaxed">

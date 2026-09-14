@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import QuoteSection from './components/QuoteSection';
 import HingeLabsSection from './components/HingeLabsSection';
 import MusicModeSection from './components/MusicModeSection';
+import FooterSection from './components/FooterSection';
 import MobileMenu from './components/MobileMenu';
 import ActionModal from './components/ActionModal';
 import ReferenceOverlay from './components/ReferenceOverlay';
@@ -43,6 +44,8 @@ export default function App() {
         <HingeLabsSection />
         {/* Pixel-Perfect Music Mode (No skips) Section */}
         <MusicModeSection />
+        {/* Pixel-Perfect Dark Hinge Footer Section */}
+        <FooterSection onOpenModal={handleOpenModal} />
       </main>
 
       {/* Mobile Drawer Menu */}

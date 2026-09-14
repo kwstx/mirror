@@ -95,27 +95,27 @@ export default function QuoteSection() {
         <div className="font-tiempos font-bold text-[1.65rem] sm:text-[1.95rem] md:text-[35.5px] leading-[1.06] sm:leading-[1.06] md:leading-[36.5px] tracking-[-0.015em] antialiased">
           {/* Paragraph 1 */}
           <p className="mb-4 sm:mb-4 md:mb-[19px]">
-            {renderAnimatedLine("The best things that ever happened to")}
+            {renderAnimatedLine("The person you’ve been looking for")}
             <br className="hidden sm:inline" />
             <span className="sm:hidden"> </span>
-            {renderAnimatedLine("you started with “let’s just see.”")}
+            {renderAnimatedLine("might be closer than you think.")}
           </p>
 
           {/* Paragraph 2 */}
           <p className="mb-14 sm:mb-20 md:mb-[96px]">
-            {renderAnimatedLine("More to connect on. More to explore.")}
+            {renderAnimatedLine("Less swiping. Better matches.")}
             <br className="hidden sm:inline" />
             <span className="sm:hidden"> </span>
-            {renderAnimatedLine("More possibilities than you could even")}
+            {renderAnimatedLine("More reasons to believe your next date")}
             <br className="hidden sm:inline" />
             <span className="sm:hidden"> </span>
-            {renderAnimatedLine("expect.")}
+            {renderAnimatedLine("could be different.")}
           </p>
         </div>
 
         {/* Signature Line */}
         <div className="font-tiempos italic font-bold text-[1.45rem] sm:text-[1.75rem] md:text-[34px] leading-tight tracking-[-0.01em] antialiased">
-          {renderAnimatedLine("– Welcome to Tinder")}
+          {renderAnimatedLine("—Welcome to dating, reimagined.")}
         </div>
       </div>
     </section>
