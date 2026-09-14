@@ -56,22 +56,18 @@ export default function HingeLabsSection() {
 
         {/* Right Column: Labs Information Content (Bottom to Top Fade In with slight stagger) */}
         <div
-          className={`w-full md:w-[533px] flex-1 flex flex-col justify-start px-6 sm:px-10 md:px-0 md:pl-[94px] pt-6 md:pt-[210px] pb-6 md:pb-0 transition-opacity duration-300 ${
+          className={`w-full md:w-[533px] flex-1 flex flex-col justify-start px-6 sm:px-10 md:px-0 md:pl-[94px] pt-6 md:pt-[150px] pb-6 md:pb-0 transition-opacity duration-300 ${
             isVisible ? 'labs-fade-in-up-delayed' : 'opacity-0'
           }`}
         >
-
-
           {/* Headline */}
-          <h2 className="font-tiempos font-bold text-[2rem] sm:text-[2.2rem] md:text-[35.5px] leading-[1.05] tracking-[-0.015em] text-mirrorBlack antialiased mb-[34px]">
+          <h2 className="font-tiempos font-bold text-[2.25rem] sm:text-[2.65rem] md:text-[42px] leading-[1.08] tracking-[-0.015em] text-mirrorBlack antialiased mb-6 md:mb-[28px]">
             We&rsquo;re building a better way to date.
           </h2>
 
           {/* Body Paragraph */}
-          <p className="font-modern font-normal text-[13px] md:text-[13.5px] leading-[19px] text-stone tracking-[0.005em] antialiased">
-            <span className="block md:whitespace-nowrap">Our AI learns who you are, understands what you want, and</span>
-            <span className="block md:whitespace-nowrap">searches for the people most compatible with you.</span>
-            <span className="block md:whitespace-nowrap">You don&rsquo;t swipe. You don&rsquo;t search. We do.</span>
+          <p className="font-modern font-normal text-[15px] sm:text-[16.5px] md:text-[17.5px] leading-[24px] sm:leading-[26px] md:leading-[27px] text-stone tracking-[0.005em] antialiased max-w-[440px]">
+            Our AI learns who you are, understands what you want, and searches for the people most compatible with you. You don&rsquo;t swipe. You don&rsquo;t search. We do.
           </p>
         </div>
       </div>

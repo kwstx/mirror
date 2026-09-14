@@ -34,7 +34,7 @@ export default function MusicModeSection() {
     <section
       ref={sectionRef}
       id="music-mode-section"
-      className="relative w-full bg-[#f1e6ef] text-[#360524] overflow-hidden select-none scroll-mt-[5.5rem]"
+      className="relative w-full bg-gray-100 text-[#360524] overflow-hidden select-none scroll-mt-[5.5rem]"
     >
       <div className="relative w-full max-w-[1024px] mx-auto pt-16 sm:pt-20 md:pt-[72px] pb-6 md:pb-[11px] box-border flex flex-col items-center">
         {/* Top Header Group (Icon + Title + Subtitle) */}
@@ -43,16 +43,6 @@ export default function MusicModeSection() {
             isVisible ? 'music-fade-in-up' : 'opacity-0 translate-y-8'
           }`}
         >
-          {/* Magenta Music Note Icon */}
-          <div className="w-[35px] h-[35px] flex items-center justify-center mb-[14px] hover:scale-110 transition-transform duration-300">
-            <img
-              src="/images/music_note_transparent.png"
-              alt="Music Mode Note Icon"
-              className="w-[35px] h-[35px] object-contain drop-shadow-[0_2px_4px_rgba(254,0,155,0.15)]"
-              loading="lazy"
-            />
-          </div>
-
           {/* Section Headline */}
           <h2 className="font-tiempos font-bold text-[28px] sm:text-[32px] md:text-[35.5px] leading-[1.05] tracking-[-0.015em] text-[#350322] antialiased mb-[13px]">
             No skips
