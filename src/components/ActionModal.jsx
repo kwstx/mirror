@@ -53,7 +53,7 @@ export default function ActionModal({ activeModal, onClose }) {
     },
     labs: {
       title: 'Mirror Labs',
-      subtitle: 'We are love scientists',
+      subtitle: 'Building a better way to date',
       icon: Sparkles,
       body: (
         <div className="space-y-4 text-stone-25 font-modern text-[15px] leading-relaxed">

@@ -60,21 +60,18 @@ export default function HingeLabsSection() {
             isVisible ? 'labs-fade-in-up-delayed' : 'opacity-0'
           }`}
         >
-          {/* Category Tag */}
-          <span className="font-modern font-medium text-[13.5px] leading-none text-aubergine tracking-normal antialiased block mb-[26px]">
-            Hinge Labs
-          </span>
+
 
           {/* Headline */}
           <h2 className="font-tiempos font-bold text-[2rem] sm:text-[2.2rem] md:text-[35.5px] leading-[1.05] tracking-[-0.015em] text-mirrorBlack antialiased mb-[34px]">
-            We&rsquo;re love scientists.
+            We&rsquo;re building a better way to date.
           </h2>
 
-          {/* Body Paragraph - Exactly 3 lines */}
+          {/* Body Paragraph */}
           <p className="font-modern font-normal text-[13px] md:text-[13.5px] leading-[19px] text-stone tracking-[0.005em] antialiased">
-            <span className="block md:whitespace-nowrap">Our Hinge Labs researchers, behavioral analysts, and</span>
-            <span className="block md:whitespace-nowrap">matchmakers study daters and compatibility so we can</span>
-            <span className="block md:whitespace-nowrap">make Hinge better for you. We&rsquo;ve gotten pretty good at it.</span>
+            <span className="block md:whitespace-nowrap">Our AI learns who you are, understands what you want, and</span>
+            <span className="block md:whitespace-nowrap">searches for the people most compatible with you.</span>
+            <span className="block md:whitespace-nowrap">You don&rsquo;t swipe. You don&rsquo;t search. We do.</span>
           </p>
         </div>
       </div>
