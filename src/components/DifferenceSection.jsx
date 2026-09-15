@@ -34,28 +34,36 @@ export default function DifferenceSection({ theme = 'light' }) {
 
   const cards = [
     {
-      title: 'Detailed Profiles',
-      body: 'Go ahead, be picky. Hinge profiles encourage you to share your religion, education, and day-to-day life so we can introduce you to the best people for you.',
+      title: 'Deep Understanding',
+      body: 'Forget filling out endless boxes. Talk to your AI matchmaker about who you are, what you want, how you love, and what actually matters to you. The more it understands, the better it can match you.',
     },
     {
-      title: 'Proven Prompts',
-      body: 'Answer three prompts to activate your profile, and switch them up any time. We review our prompts and keep the ones that are most likely to get you out on a date.',
+      title: 'AI Matchmaker',
+      body: 'You don\u2019t browse the dating pool. Your AI does. It analyzes compatible people, weighs personality, values, lifestyle, attraction, and relationship goals, then brings you the few it genuinely thinks you should meet.',
     },
     {
-      title: 'Conversation Starters',
-      body: 'Our research found that liking specific pictures or prompts leads to better matches and more dates than liking a profile in general. So now users must like a specific part of a Hinge profile—they can even add a comment to their like to kickstart a conversation.',
+      title: 'Mutual Matches',
+      body: 'We don\u2019t believe one person should have to chase another. When our AI finds a promising connection, it recommends you to both people independently. Only when you\u2019re both interested do you get introduced.',
     },
     {
-      title: 'Matchmaking Algorithm',
-      body: 'Hinge uses a Nobel-Prize-winning algorithm that helps you go on better quality dates, not just more dates. You’re eight times more likely to have a great date with our Most Compatible suggestions, aka the people we think you’ll like the most.',
+      title: 'Why You Two',
+      body: 'Every introduction comes with a reason. See exactly what your AI noticed\u2014from shared values and relationship goals to complementary personalities and unexpected chemistry.',
     },
     {
-      title: 'Meaningful Likes',
-      body: 'Research has shown us that eight is the magic number. When our members had more free likes per day, their matches were worse. When they had fewer, they were paying to send more. So now everyone gets eight for free every day.',
+      title: 'Beyond Your Type',
+      body: 'Your stated preferences aren\u2019t the whole story. Our AI learns from your conversations, dates, feedback, and relationships to discover patterns you might never notice yourself. Sometimes, the person you need isn\u2019t the person you thought you wanted.',
     },
     {
-      title: 'Transparent Likes',
-      body: 'No anonymous likes—we show you who has liked you, so you don’t miss out on a potential match.',
+      title: 'Fewer, Better Introductions',
+      body: 'No infinite feeds. No hundreds of profiles waiting to be judged. We filter the noise and give you a small number of people worth your attention.',
+    },
+    {
+      title: 'Date Feedback',
+      body: 'Tell us what happened after you meet. Chemistry, attraction, conversation, comfort, and whether you\u2019d see them again all help your matchmaker understand what actually works for you.',
+    },
+    {
+      title: 'A Matchmaker That Learns',
+      body: 'Every interaction makes your recommendations smarter. The goal isn\u2019t to keep you dating forever\u2014it\u2019s to get better at finding someone you genuinely want to stop dating apps for.',
     },
   ];
 
@@ -68,7 +76,7 @@ export default function DifferenceSection({ theme = 'light' }) {
       {/* 1024px Container matching reference coordinates & spacing */}
       <div className="relative w-full max-w-[1024px] mx-auto px-6 sm:px-12 md:px-[78.5px] box-border">
         
-        {/* Headline: The Hinge Difference */}
+        {/* Headline: The Cupid Difference */}
         <h2
           className={`font-tiempos font-normal text-[36px] sm:text-[40px] md:text-[43.5px] leading-none tracking-[-0.018em] ${
             isLight ? 'text-[#1a1a1a]' : 'text-[#fffefd]'
@@ -76,7 +84,7 @@ export default function DifferenceSection({ theme = 'light' }) {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
           }`}
         >
-          The Hinge Difference
+          The Cupid Difference
         </h2>
 
         {/* Dividing Horizontal Line */}
