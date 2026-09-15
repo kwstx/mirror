@@ -72,11 +72,11 @@ export default function MobileMenu({ isOpen, onClose, onOpenModal, onNavigate })
         <button
           onClick={() => {
             onClose();
-            onOpenModal('download');
+            onOpenModal('waitlist');
           }}
           className="w-full font-modern font-bold text-center bg-white text-mirrorBlack py-3.5 rounded-full hover:bg-aubergine hover:text-white transition-colors"
         >
-          Download Cupid
+          Join waitlist
         </button>
         <p className="font-modern text-xs text-stone-50 text-center">
           © 2026 Cupid Inc. Designed to be deleted.

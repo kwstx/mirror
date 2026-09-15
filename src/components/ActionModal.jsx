@@ -1,10 +1,74 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { X, Heart, Sparkles, Award, Globe, Briefcase, Download, ExternalLink } from 'lucide-react';
+
+function WaitlistModalContent() {
+  const [email, setEmail] = useState('');
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (email.trim()) {
+      setSubmitted(true);
+    }
+  };
+
+  if (submitted) {
+    return (
+      <div className="space-y-4 text-center py-4">
+        <div className="w-12 h-12 rounded-full bg-aubergine/40 text-aubergine-25 mx-auto flex items-center justify-center">
+          <Sparkles className="w-6 h-6 text-aubergine-25" />
+        </div>
+        <h4 className="font-tiempos text-xl text-white font-medium">You&rsquo;re on the waitlist!</h4>
+        <p className="font-modern text-sm text-stone-25">
+          Thank you for joining. We&rsquo;ll send exclusive early access to <span className="text-white font-semibold">{email}</span> as soon as spots open up.
+        </p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="space-y-4 text-stone-25 font-modern text-[14.5px] leading-relaxed">
+      <p className="text-white font-tiempos text-xl leading-snug">
+        Be the first to find your person.
+      </p>
+      <p>
+        We are rolling out Cupid in select cities to preserve intentional, high-quality matchmaking. Join the waitlist for priority access and member perks.
+      </p>
+      <form onSubmit={handleSubmit} className="mt-4 space-y-3">
+        <div className="flex flex-col sm:flex-row gap-2">
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Enter your email address"
+            required
+            className="flex-1 px-4 py-2.5 rounded-full bg-[#242424] border border-stone/30 text-white placeholder-stone-50 focus:outline-none focus:border-aubergine-25 text-sm"
+          />
+          <button
+            type="submit"
+            className="px-5 py-2.5 rounded-full bg-white text-mirrorBlack font-modern font-semibold text-sm hover:bg-aubergine hover:text-white transition-colors cursor-pointer whitespace-nowrap"
+          >
+            Join waitlist
+          </button>
+        </div>
+        <p className="text-[11.5px] text-stone-50">
+          No spam. We&rsquo;ll notify you when invitations are released.
+        </p>
+      </form>
+    </div>
+  );
+}
 
 export default function ActionModal({ activeModal, onClose }) {
   if (!activeModal) return null;
 
   const contentMap = {
+    waitlist: {
+      title: 'Join the Waitlist',
+      subtitle: 'Early access to Cupid',
+      icon: Sparkles,
+      body: <WaitlistModalContent />,
+    },
     mission: {
       title: 'Our Philosophy',
       subtitle: 'Dating shouldn’t feel like shopping',

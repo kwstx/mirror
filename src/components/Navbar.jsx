@@ -103,37 +103,31 @@ export default function Navbar({ onOpenModal, onToggleMobileMenu, onNavigate, cu
           </a>
         </div>
 
-        {/* Desktop Right Nav Links */}
-        <nav className="hidden md:flex items-center space-x-9 lg:space-x-11">
+        {/* Desktop Right CTA Button */}
+        <div className="hidden md:flex items-center">
           <button
-            onClick={() => onOpenModal('newsroom')}
-            className={`font-modern font-medium text-[15.5px] tracking-[0.005em] ${
-              isLight ? 'text-[#1a1a1a] hover:text-aubergine' : 'text-white hover:text-white/80'
-            } transition-colors focus:outline-none`}
-          >
-            Newsroom
-          </button>
-          <button
-            onClick={() => onOpenModal('careers')}
-            className={`font-modern font-medium text-[15.5px] tracking-[0.005em] ${
-              isLight ? 'text-[#1a1a1a] hover:text-aubergine' : 'text-white hover:text-white/80'
-            } transition-colors focus:outline-none`}
-          >
-            Careers
-          </button>
-        </nav>
-
-        {/* Mobile Download CTA */}
-        <div className="flex md:hidden items-center">
-          <button
-            onClick={() => onOpenModal('download')}
-            className={`font-modern font-bold text-xs ${
+            onClick={() => onOpenModal('waitlist')}
+            className={`font-modern font-semibold text-[15px] tracking-[0.005em] px-6 py-2.5 rounded-full transition-all duration-200 shadow-md active:scale-95 focus:outline-none ${
               isLight
                 ? 'bg-[#1a1a1a] text-white hover:bg-aubergine'
-                : 'bg-white text-mirrorBlack hover:bg-aubergine hover:text-white'
-            } px-3.5 py-1.5 rounded-full transition-colors`}
+                : 'bg-white text-mirrorBlack hover:bg-white/90'
+            }`}
           >
-            Download
+            Join waitlist
+          </button>
+        </div>
+
+        {/* Mobile Join Waitlist CTA */}
+        <div className="flex md:hidden items-center">
+          <button
+            onClick={() => onOpenModal('waitlist')}
+            className={`font-modern font-semibold text-xs ${
+              isLight
+                ? 'bg-[#1a1a1a] text-white hover:bg-aubergine'
+                : 'bg-white text-mirrorBlack hover:bg-white/90'
+            } px-4 py-2 rounded-full transition-colors active:scale-95`}
+          >
+            Join waitlist
           </button>
         </div>
 
