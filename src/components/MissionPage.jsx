@@ -10,7 +10,7 @@ export default function MissionPage({ onNavigate, onOpenModal }) {
   }, []);
 
   return (
-    <div className="relative w-full min-h-screen bg-white text-[#1a1a1a] font-modern flex flex-col justify-between overflow-x-hidden pt-[4.75rem] md:pt-[5.5rem]">
+    <div className="relative w-full min-h-screen bg-white text-[#1a1a1a] font-modern flex flex-col justify-between overflow-x-hidden pt-[5.5rem] md:pt-[6.5rem]">
       
       {/* Main Mission Page Container */}
       <main className="relative w-full flex-1 flex flex-col items-center">
@@ -18,7 +18,7 @@ export default function MissionPage({ onNavigate, onOpenModal }) {
         {/* Mission Intro Section */}
         <section
           id="mission-section"
-          className="relative w-full bg-white text-[#1a1a1a] overflow-hidden select-none flex justify-center items-center pt-8 pb-4 md:pt-12 md:pb-6"
+          className="relative w-full bg-white text-[#1a1a1a] overflow-hidden select-none flex justify-center items-center pt-10 pb-6 md:pt-16 md:pb-8"
         >
           <div className="relative w-full max-w-[1024px] mx-auto px-6 sm:px-12 md:px-[81px] box-border">
             

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-export default function DifferenceSection({ theme = 'dark' }) {
+export default function DifferenceSection({ theme = 'light' }) {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
