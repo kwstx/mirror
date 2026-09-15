@@ -4,12 +4,14 @@ export default function Navbar({ onOpenModal, onToggleMobileMenu, onNavigate, cu
   const isLight = currentPage === 'mission';
 
   return (
-    <header className="fixed top-0 left-0 w-full z-40 h-[4.75rem] md:h-[5.5rem] transition-all duration-300">
+    <header className={`fixed top-0 left-0 w-full z-40 h-[4.75rem] md:h-[5.5rem] transition-all duration-300 ${
+      isLight ? 'bg-white/95 backdrop-blur-md border-b border-black/5' : ''
+    }`}>
       {/* Top subtle gradient */}
       <div
         className={`absolute inset-0 ${
           isLight
-            ? 'bg-gradient-to-b from-white/90 via-white/50 to-transparent backdrop-blur-[2px]'
+            ? 'hidden'
             : 'bg-gradient-to-b from-black/45 via-black/15 to-transparent'
         } pointer-events-none`}
       />

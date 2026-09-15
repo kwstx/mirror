@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Heart, Sparkles, Shield, Compass, Users } from 'lucide-react';
 import FooterSection from './FooterSection';
 import ValuesCardsSection from './ValuesCardsSection';
+import DifferenceSection from './DifferenceSection';
 
 export default function MissionPage({ onNavigate, onOpenModal }) {
   useEffect(() => {
@@ -14,33 +15,27 @@ export default function MissionPage({ onNavigate, onOpenModal }) {
       {/* Main Mission Page Container */}
       <main className="relative w-full flex-1 flex flex-col items-center">
         
-        {/* Pixel-Perfect Reference Canvas Section (1024x378) */}
+        {/* Mission Intro Section */}
         <section
           id="mission-section"
-          className="relative w-full bg-white text-[#1a1a1a] overflow-hidden select-none flex justify-center items-center"
+          className="relative w-full bg-white text-[#1a1a1a] overflow-hidden select-none flex justify-center items-center pt-8 pb-4 md:pt-12 md:pb-6"
         >
-          <div className="relative w-full max-w-[1024px] h-[378px] min-h-[378px] mx-auto box-border">
+          <div className="relative w-full max-w-[1024px] mx-auto px-6 sm:px-12 md:px-[81px] box-border">
             
             {/* Eyebrow Label: Our Values */}
-            <div
-              className="absolute top-[45px] left-6 sm:left-12 md:left-[81px] font-modern font-medium text-[12.1px] tracking-[0.005em] text-[#705a6e] leading-none antialiased"
-            >
+            <div className="font-modern font-medium text-[12.1px] tracking-[0.005em] text-[#705a6e] leading-none antialiased mb-7 md:mb-8">
               Our Values
             </div>
 
-            {/* Headline: Relationships are at the core of everything we do. */}
-            <h1
-              className="absolute top-[85px] left-6 sm:left-12 md:left-[81px] font-tiempos font-normal text-[28px] sm:text-[31px] md:text-[33.5px] leading-[1.08] md:leading-[35.8px] tracking-[-0.015em] text-[#1a1a1a] antialiased m-0 p-0"
-            >
+            {/* Headline */}
+            <h1 className="font-tiempos font-normal text-[28px] sm:text-[31px] md:text-[33.5px] leading-[1.08] md:leading-[35.8px] tracking-[-0.015em] text-[#1a1a1a] antialiased m-0 p-0 mb-7 md:mb-8">
               Relationships are at the core
               <br />
               of everything we do.
             </h1>
 
             {/* Body Paragraph 1 */}
-            <p
-              className="absolute top-[175px] left-6 sm:left-12 md:left-[81px] font-modern font-normal text-[13px] sm:text-[13.2px] md:text-[13.5px] leading-[18.5px] sm:leading-[19px] md:leading-[19.5px] tracking-[0.001em] text-[#1a1a1a] antialiased max-w-[90%] md:max-w-none m-0 p-0"
-            >
+            <p className="font-modern font-normal text-[13px] sm:text-[13.2px] md:text-[13.5px] leading-[18.5px] sm:leading-[19px] md:leading-[19.5px] tracking-[0.001em] text-[#1a1a1a] antialiased max-w-[90%] md:max-w-none m-0 p-0 mb-4 md:mb-5">
               And not just the romantic kind. We can&rsquo;t accomplish really hard things
               <br className="hidden md:inline" />
               {' '}alone&mdash;so we make great relationships the foundation of our
@@ -49,9 +44,7 @@ export default function MissionPage({ onNavigate, onOpenModal }) {
             </p>
 
             {/* Body Paragraph 2 */}
-            <p
-              className="absolute top-[253px] left-6 sm:left-12 md:left-[81px] font-modern font-normal text-[13px] sm:text-[13.2px] md:text-[13.5px] leading-[18px] sm:leading-[18.5px] md:leading-[19.0px] tracking-[0.001em] text-[#1a1a1a] antialiased max-w-[90%] md:max-w-none m-0 p-0"
-            >
+            <p className="font-modern font-normal text-[13px] sm:text-[13.2px] md:text-[13.5px] leading-[18px] sm:leading-[18.5px] md:leading-[19.0px] tracking-[0.001em] text-[#1a1a1a] antialiased max-w-[90%] md:max-w-none m-0 p-0">
               We believe these three core values are what it takes to build those
               <br className="hidden md:inline" />
               {' '}great relationships.
@@ -62,6 +55,9 @@ export default function MissionPage({ onNavigate, onOpenModal }) {
 
         {/* Pixel-Perfect 3 Values Cards Section (1024x374) */}
         <ValuesCardsSection />
+
+        {/* Pixel-Perfect The Hinge Difference Section (1024x460) */}
+        <DifferenceSection />
 
         {/* Back to Home Action Bar */}
         <section className="relative w-full max-w-[1024px] mx-auto px-6 sm:px-12 md:px-[81px] pt-10 pb-16 box-border text-center">

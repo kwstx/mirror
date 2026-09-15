@@ -10,12 +10,14 @@ export default function ReferenceOverlay({ zoom, setZoom, onReplayAnimation, cur
 
   const handleSelectSection = (section) => {
     setActiveSection(section);
-    if (section === 'mission' || section === 'cards') {
+    if (section === 'mission' || section === 'cards' || section === 'difference') {
       if (currentPage !== 'mission' && onNavigate) {
         onNavigate('mission');
       }
       setTimeout(() => {
-        const targetId = section === 'cards' ? 'values-cards-section' : 'mission-section';
+        let targetId = 'mission-section';
+        if (section === 'cards') targetId = 'values-cards-section';
+        if (section === 'difference') targetId = 'difference-section';
         const el = document.getElementById(targetId);
         if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }, 80);
@@ -76,6 +78,16 @@ export default function ReferenceOverlay({ zoom, setZoom, onReplayAnimation, cur
                 <img
                   src="/images/values_cards_reference.png"
                   alt="Values cards reference screenshot"
+                  className="w-full h-auto object-contain object-top"
+                />
+              </div>
+            </div>
+          ) : activeSection === 'difference' ? (
+            <div className="w-full h-full flex justify-center items-start">
+              <div className="w-full max-w-[1024px] pointer-events-none">
+                <img
+                  src="/images/difference_section_reference.png"
+                  alt="Difference section reference screenshot"
                   className="w-full h-auto object-contain object-top"
                 />
               </div>
@@ -213,6 +225,16 @@ export default function ReferenceOverlay({ zoom, setZoom, onReplayAnimation, cur
                   }`}
                 >
                   Cards
+                </button>
+                <button
+                  onClick={() => handleSelectSection('difference')}
+                  className={`py-1 px-1 rounded-md font-bold text-[10px] transition-colors ${
+                    activeSection === 'difference'
+                      ? 'bg-aubergine text-white shadow-sm ring-1 ring-white/40'
+                      : 'bg-stone/30 text-stone-50 hover:text-white'
+                  }`}
+                >
+                  Diff
                 </button>
                 <button
                   onClick={() => handleSelectSection('footer')}

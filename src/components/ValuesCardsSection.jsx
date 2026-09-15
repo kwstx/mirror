@@ -30,93 +30,63 @@ export default function ValuesCardsSection() {
     };
   }, []);
 
+  const values = [
+    {
+      num: '01',
+      title: 'Authenticity',
+      body: 'We share \u2014 never hide \u2014 our words, actions, and intentions.',
+      delay: 0,
+    },
+    {
+      num: '02',
+      title: 'Courage',
+      body: 'Breakthroughs require a willingness to take risks and embrace lofty goals and tough challenges.',
+      delay: 100,
+    },
+    {
+      num: '03',
+      title: 'Empathy',
+      body: 'We\u2019re all humans first. So we deeply consider the perspectives of others, listen openly, and speak with care.',
+      delay: 200,
+    },
+  ];
+
   return (
     <section
       ref={sectionRef}
       id="values-cards-section"
-      className="relative w-full bg-white text-[#1a1a1a] overflow-hidden select-none flex justify-center items-center"
+      className="relative w-full bg-white text-[#1a1a1a] overflow-hidden select-none flex justify-center items-center pt-2 pb-10 md:pt-4 md:pb-16"
     >
-      {/* 1024px x 374px Exact Coordinate Canvas */}
-      <div className="relative w-full max-w-[1024px] h-[374px] min-h-[374px] mx-auto box-border">
-        
-        {/* Column 1: 01 / Authenticity */}
-        <div
-          className={`absolute top-[54px] left-6 sm:left-12 md:left-[81.5px] font-tiempos font-normal text-[90px] sm:text-[115px] md:text-[138px] leading-none tracking-[-0.035em] text-[#1a1a1a] antialiased transition-all duration-800 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-          }`}
-        >
-          01
+      {/* 1024px Container */}
+      <div className="relative w-full max-w-[1024px] mx-auto px-6 sm:px-12 md:px-[81.5px] box-border">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-[29px] gap-y-12 md:gap-y-0">
+          {values.map((item) => (
+            <div
+              key={item.num}
+              className={`flex flex-col transition-all duration-800 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}
+              style={{ transitionDelay: `${item.delay}ms` }}
+            >
+              {/* Numeral */}
+              <div className="font-tiempos font-normal text-[90px] sm:text-[115px] md:text-[138px] leading-none tracking-[-0.035em] text-[#1a1a1a] antialiased mb-4 md:mb-[44px]">
+                {item.num}
+              </div>
+              
+              {/* Title */}
+              <h2 className="font-tiempos font-normal text-[28px] sm:text-[31px] md:text-[33.5px] leading-none tracking-[-0.015em] text-[#1a1a1a] antialiased m-0 p-0 mb-3 md:mb-[11px]">
+                {item.title}
+              </h2>
+              
+              {/* Body */}
+              <p className="font-modern font-normal text-[11.8px] sm:text-[12.1px] md:text-[12.28px] leading-[16.5px] sm:leading-[17px] md:leading-[17.3px] tracking-[0.001em] text-[#1a1a1a] antialiased max-w-[275px] m-0 p-0">
+                {item.body}
+              </p>
+            </div>
+          ))}
         </div>
-        <h2
-          className={`absolute top-[236.5px] left-6 sm:left-12 md:left-[81.5px] font-tiempos font-normal text-[28px] sm:text-[31px] md:text-[33.5px] leading-none tracking-[-0.015em] text-[#1a1a1a] antialiased m-0 p-0 transition-all duration-800 delay-100 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-          }`}
-        >
-          Authenticity
-        </h2>
-        <p
-          className={`absolute top-[281.5px] left-6 sm:left-12 md:left-[81.5px] font-modern font-normal text-[11.8px] sm:text-[12.1px] md:text-[12.28px] leading-[16.5px] sm:leading-[17px] md:leading-[17.3px] tracking-[0.001em] text-[#1a1a1a] antialiased max-w-[265px] md:max-w-none m-0 p-0 transition-all duration-800 delay-200 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-          }`}
-        >
-          We share &mdash; never hide &mdash; our words, actions,
-          <br className="hidden md:inline" />
-          {' '}and intentions.
-        </p>
-
-        {/* Column 2: 02 / Courage */}
-        <div
-          className={`absolute top-[54px] left-[38%] sm:left-[38%] md:left-[378px] font-tiempos font-normal text-[90px] sm:text-[115px] md:text-[138px] leading-none tracking-[-0.035em] text-[#1a1a1a] antialiased transition-all duration-800 delay-100 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-          }`}
-        >
-          02
-        </div>
-        <h2
-          className={`absolute top-[236.5px] left-[38%] sm:left-[38%] md:left-[378px] font-tiempos font-normal text-[28px] sm:text-[31px] md:text-[33.5px] leading-none tracking-[-0.015em] text-[#1a1a1a] antialiased m-0 p-0 transition-all duration-800 delay-200 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-          }`}
-        >
-          Courage
-        </h2>
-        <p
-          className={`absolute top-[281.5px] left-[38%] sm:left-[38%] md:left-[378px] font-modern font-normal text-[11.8px] sm:text-[12.1px] md:text-[12.28px] leading-[16.5px] sm:leading-[17px] md:leading-[17.3px] tracking-[0.001em] text-[#1a1a1a] antialiased max-w-[265px] md:max-w-none m-0 p-0 transition-all duration-800 delay-300 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-          }`}
-        >
-          Breakthroughs require a willingness to take risks
-          <br className="hidden md:inline" />
-          {' '}and embrace lofty goals and tough challenges.
-        </p>
-
-        {/* Column 3: 03 / Empathy */}
-        <div
-          className={`absolute top-[54px] left-[70%] sm:left-[70%] md:left-[674px] font-tiempos font-normal text-[90px] sm:text-[115px] md:text-[138px] leading-none tracking-[-0.035em] text-[#1a1a1a] antialiased transition-all duration-800 delay-200 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-          }`}
-        >
-          03
-        </div>
-        <h2
-          className={`absolute top-[236.5px] left-[70%] sm:left-[70%] md:left-[674px] font-tiempos font-normal text-[28px] sm:text-[31px] md:text-[33.5px] leading-none tracking-[-0.015em] text-[#1a1a1a] antialiased m-0 p-0 transition-all duration-800 delay-300 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-          }`}
-        >
-          Empathy
-        </h2>
-        <p
-          className={`absolute top-[281.5px] left-[70%] sm:left-[70%] md:left-[674px] font-modern font-normal text-[11.8px] sm:text-[12.1px] md:text-[12.28px] leading-[16.5px] sm:leading-[17px] md:leading-[17.3px] tracking-[0.001em] text-[#1a1a1a] antialiased max-w-[275px] md:max-w-none m-0 p-0 transition-all duration-800 delay-400 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-          }`}
-        >
-          We&rsquo;re all humans first. So we deeply consider the
-          <br className="hidden md:inline" />
-          {' '}perspectives of others, listen openly, and speak
-          <br className="hidden md:inline" />
-          {' '}with care.
-        </p>
-
       </div>
     </section>
   );
 }
+
