@@ -15,17 +15,17 @@ function WaitlistModalContent() {
   if (submitted) {
     return (
       <div className="space-y-4 text-center py-4">
-        <h4 className="font-tiempos text-xl text-white font-medium">You&rsquo;re on the waitlist!</h4>
-        <p className="font-modern text-sm text-stone-25">
-          Thank you for joining. We&rsquo;ll send exclusive early access to <span className="text-white font-semibold">{email}</span> as soon as spots open up.
+        <h4 className="font-tiempos text-xl text-[#1a1a1a] font-medium">You&rsquo;re on the waitlist!</h4>
+        <p className="font-modern text-sm text-[#484848]">
+          Thank you for joining. We&rsquo;ll send exclusive early access to <span className="text-[#1a1a1a] font-semibold">{email}</span> as soon as spots open up.
         </p>
       </div>
     );
   }
 
   return (
-    <div className="space-y-4 text-stone-25 font-modern text-[14.5px] leading-relaxed">
-      <p className="text-white font-tiempos text-xl leading-snug">
+    <div className="space-y-4 text-[#484848] font-modern text-[14.5px] leading-relaxed">
+      <p className="text-[#1a1a1a] font-tiempos text-xl leading-snug">
         Be the first to find your person.
       </p>
       <p>
@@ -39,16 +39,16 @@ function WaitlistModalContent() {
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter your email address"
             required
-            className="flex-1 px-4 py-2.5 rounded-full bg-[#242424] border border-stone/30 text-white placeholder-stone-50 focus:outline-none focus:border-aubergine-25 text-sm"
+            className="flex-1 px-4 py-2.5 rounded-full bg-[#f4f4f4] border border-black/10 text-[#1a1a1a] placeholder-[#888888] focus:outline-none focus:border-aubergine text-sm"
           />
           <button
             type="submit"
-            className="px-5 py-2.5 rounded-full bg-white text-mirrorBlack font-modern font-semibold text-sm hover:bg-aubergine hover:text-white transition-colors cursor-pointer whitespace-nowrap"
+            className="px-5 py-2.5 rounded-full bg-[#1a1a1a] text-white font-modern font-semibold text-sm hover:bg-aubergine transition-colors cursor-pointer whitespace-nowrap shadow-sm"
           >
             Join waitlist
           </button>
         </div>
-        <p className="text-[11.5px] text-stone-50">
+        <p className="text-[11.5px] text-[#737373]">
           No spam. We&rsquo;ll notify you when invitations are released.
         </p>
       </form>
@@ -71,8 +71,8 @@ export default function ActionModal({ activeModal, onClose }) {
       subtitle: 'Dating shouldn’t feel like shopping',
       icon: Heart,
       body: (
-        <div className="space-y-4 text-stone-25 font-modern text-[14.5px] leading-relaxed">
-          <p className="text-white font-tiempos text-xl leading-snug">
+        <div className="space-y-4 text-[#484848] font-modern text-[14.5px] leading-relaxed">
+          <p className="text-[#1a1a1a] font-tiempos text-xl leading-snug">
             Dating shouldn&rsquo;t feel like shopping.
           </p>
           <p>
@@ -81,9 +81,9 @@ export default function ActionModal({ activeModal, onClose }) {
           <p>
             We believe these three principles are what make better dating possible.
           </p>
-          <div className="bg-[#242424] p-4 rounded-xl border border-stone/30 mt-4">
-            <span className="text-xs uppercase tracking-widest text-aubergine-25 font-bold block mb-1">Our Philosophy</span>
-            <p className="font-modern text-sm text-stone-50">
+          <div className="bg-[#f7f7f7] p-4 rounded-xl border border-black/10 mt-4">
+            <span className="text-xs uppercase tracking-widest text-aubergine font-bold block mb-1">Our Philosophy</span>
+            <p className="font-modern text-sm text-[#666666]">
               Measuring success not by time spent in the app, but by genuine, lasting human connection in the real world.
             </p>
           </div>
@@ -95,7 +95,7 @@ export default function ActionModal({ activeModal, onClose }) {
       subtitle: 'Our commitment to social connection',
       icon: Globe,
       body: (
-        <div className="space-y-4 text-stone-25 font-modern text-[15px] leading-relaxed">
+        <div className="space-y-4 text-[#484848] font-modern text-[15px] leading-relaxed">
           <p>
             Loneliness has become an epidemic among Gen Z and young adults. Through our <strong>One More Hour</strong> initiative, Cupid is mobilizing resources and grants to help people spend more time connecting in real life.
           </p>
@@ -103,13 +103,13 @@ export default function ActionModal({ activeModal, onClose }) {
             We partner with community spaces, cultural venues, and local hubs to facilitate meaningful, tech-free human interactions.
           </p>
           <div className="grid grid-cols-2 gap-3 mt-4">
-            <div className="bg-[#242424] p-3.5 rounded-xl border border-stone/30 text-center">
-              <span className="font-tiempos text-2xl text-aubergine-25 block font-semibold">$5M+</span>
-              <span className="text-xs text-stone-50">Social Connection Grants</span>
+            <div className="bg-[#f7f7f7] p-3.5 rounded-xl border border-black/10 text-center">
+              <span className="font-tiempos text-2xl text-aubergine block font-semibold">$5M+</span>
+              <span className="text-xs text-[#666666]">Social Connection Grants</span>
             </div>
-            <div className="bg-[#242424] p-3.5 rounded-xl border border-stone/30 text-center">
-              <span className="font-tiempos text-2xl text-aubergine-25 block font-semibold">1M+</span>
-              <span className="text-xs text-stone-50">In-Person Hours Sparked</span>
+            <div className="bg-[#f7f7f7] p-3.5 rounded-xl border border-black/10 text-center">
+              <span className="font-tiempos text-2xl text-aubergine block font-semibold">1M+</span>
+              <span className="text-xs text-[#666666]">In-Person Hours Sparked</span>
             </div>
           </div>
         </div>
@@ -120,16 +120,16 @@ export default function ActionModal({ activeModal, onClose }) {
       subtitle: 'Building a better way to date',
       icon: Sparkles,
       body: (
-        <div className="space-y-4 text-stone-25 font-modern text-[15px] leading-relaxed">
+        <div className="space-y-4 text-[#484848] font-modern text-[15px] leading-relaxed">
           <p>
             Our in-house team of relationship researchers, behavioral scientists, and matchmakers study what makes daters click. We analyze date outcomes, communication patterns, and connection signals.
           </p>
           <p>
             Key findings from Cupid Labs have helped eliminate ghosting, introduce voice prompts, and develop "We Met" feedback to continually refine match quality.
           </p>
-          <div className="bg-[#242424] p-4 rounded-xl border border-stone/30 mt-4">
-            <span className="text-xs uppercase tracking-widest text-aubergine-25 font-bold block mb-1">Key Stat</span>
-            <p className="font-tiempos text-base text-white">
+          <div className="bg-[#f7f7f7] p-4 rounded-xl border border-black/10 mt-4">
+            <span className="text-xs uppercase tracking-widest text-aubergine font-bold block mb-1">Key Stat</span>
+            <p className="font-tiempos text-base text-[#1a1a1a]">
               "3 out of 4 second dates on Cupid lead to ongoing relationships."
             </p>
           </div>
@@ -141,24 +141,24 @@ export default function ActionModal({ activeModal, onClose }) {
       subtitle: 'Cupid in the headlines',
       icon: Award,
       body: (
-        <div className="space-y-4 text-stone-25 font-modern text-[15px] leading-relaxed">
+        <div className="space-y-4 text-[#484848] font-modern text-[15px] leading-relaxed">
           <p>
             Access official press releases, brand assets, executive bios, and research publications from the Cupid team.
           </p>
           <div className="space-y-2 mt-4">
-            <div className="p-3 bg-[#242424] rounded-lg border border-stone/30 flex items-center justify-between">
+            <div className="p-3 bg-[#f7f7f7] rounded-lg border border-black/10 flex items-center justify-between">
               <div>
-                <span className="text-xs text-stone-50">September 2026</span>
-                <p className="text-white text-sm font-medium">Cupid Expands Global Connection Initiative</p>
+                <span className="text-xs text-[#737373]">September 2026</span>
+                <p className="text-[#1a1a1a] text-sm font-medium">Cupid Expands Global Connection Initiative</p>
               </div>
-              <ExternalLink className="w-4 h-4 text-stone-50" />
+              <ExternalLink className="w-4 h-4 text-[#737373]" />
             </div>
-            <div className="p-3 bg-[#242424] rounded-lg border border-stone/30 flex items-center justify-between">
+            <div className="p-3 bg-[#f7f7f7] rounded-lg border border-black/10 flex items-center justify-between">
               <div>
-                <span className="text-xs text-stone-50">August 2026</span>
-                <p className="text-white text-sm font-medium">Annual Dating Trends Report: Authenticity First</p>
+                <span className="text-xs text-[#737373]">August 2026</span>
+                <p className="text-[#1a1a1a] text-sm font-medium">Annual Dating Trends Report: Authenticity First</p>
               </div>
-              <ExternalLink className="w-4 h-4 text-stone-50" />
+              <ExternalLink className="w-4 h-4 text-[#737373]" />
             </div>
           </div>
         </div>
@@ -169,15 +169,15 @@ export default function ActionModal({ activeModal, onClose }) {
       subtitle: "Let's work together",
       icon: Briefcase,
       body: (
-        <div className="space-y-4 text-stone-25 font-modern text-[15px] leading-relaxed">
+        <div className="space-y-4 text-[#484848] font-modern text-[15px] leading-relaxed">
           <p>
             We are looking for passionate engineers, designers, researchers, and operators who want to make dating effective, not addictive.
           </p>
           <p>
             Enjoy flexible remote/hybrid hubs, generous wellness stipends, relationship coaching benefits, and meaningful equity.
           </p>
-          <div className="bg-[#242424] p-4 rounded-xl border border-stone/30 mt-4 text-center">
-            <p className="text-white font-medium mb-2">Explore Open Positions</p>
+          <div className="bg-[#f7f7f7] p-4 rounded-xl border border-black/10 mt-4 text-center">
+            <p className="text-[#1a1a1a] font-medium mb-2">Explore Open Positions</p>
             <span className="inline-block bg-aubergine text-white text-xs font-bold px-4 py-2 rounded-full cursor-pointer hover:bg-aubergine/80 transition-colors">
               View 24 Open Roles
             </span>
@@ -190,8 +190,8 @@ export default function ActionModal({ activeModal, onClose }) {
       subtitle: 'Scan with your phone to get the app',
       icon: Download,
       body: (
-        <div className="space-y-4 text-stone-25 font-modern text-[15px] leading-relaxed text-center">
-          <div className="mx-auto w-44 h-44 bg-white p-3 rounded-2xl flex items-center justify-center shadow-lg my-2">
+        <div className="space-y-4 text-[#484848] font-modern text-[15px] leading-relaxed text-center">
+          <div className="mx-auto w-44 h-44 bg-white p-3 rounded-2xl border border-black/10 flex items-center justify-center shadow-lg my-2">
             {/* SVG QR Code Simulation */}
             <svg viewBox="0 0 100 100" className="w-full h-full fill-black">
               <rect width="100" height="100" fill="white" />
@@ -234,7 +234,7 @@ export default function ActionModal({ activeModal, onClose }) {
               <rect x="85" y="85" width="6" height="6" fill="#1a1a1a" />
             </svg>
           </div>
-          <p className="text-xs text-stone-50">
+          <p className="text-xs text-[#737373]">
             Available on iOS App Store & Google Play Store
           </p>
         </div>
@@ -249,18 +249,18 @@ export default function ActionModal({ activeModal, onClose }) {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm animate-fade"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fade"
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-lg bg-[#1a1a1a] border border-stone/30 rounded-2xl p-6 sm:p-8 shadow-2xl text-white overflow-hidden"
+        className="relative w-full max-w-lg bg-white border border-black/10 rounded-2xl p-6 sm:p-8 shadow-2xl text-[#1a1a1a] overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
         <button
           onClick={onClose}
           aria-label="Close modal"
-          className="absolute top-5 right-5 text-stone-50 hover:text-white transition-colors p-1"
+          className="absolute top-5 right-5 text-[#737373] hover:text-[#1a1a1a] transition-colors p-1"
         >
           <X className="w-5 h-5" />
         </button>
@@ -268,15 +268,15 @@ export default function ActionModal({ activeModal, onClose }) {
         {/* Header */}
         <div className={`flex items-center ${IconComponent ? 'space-x-3' : ''} mb-4`}>
           {IconComponent && (
-            <div className="w-10 h-10 rounded-full bg-aubergine/30 flex items-center justify-center text-aubergine-25 flex-shrink-0">
+            <div className="w-10 h-10 rounded-full bg-aubergine/10 flex items-center justify-center text-aubergine flex-shrink-0">
               <IconComponent className="w-5 h-5" />
             </div>
           )}
           <div>
-            <h3 className="font-tiempos text-2xl font-semibold text-white">
+            <h3 className="font-tiempos text-2xl font-semibold text-[#1a1a1a]">
               {item.title}
             </h3>
-            <p className="font-modern text-xs text-stone-50">{item.subtitle}</p>
+            <p className="font-modern text-xs text-[#737373]">{item.subtitle}</p>
           </div>
         </div>
 
@@ -284,10 +284,10 @@ export default function ActionModal({ activeModal, onClose }) {
         <div className="mt-4">{item.body}</div>
 
         {/* Footer */}
-        <div className="mt-6 pt-4 border-t border-stone/20 flex justify-end">
+        <div className="mt-6 pt-4 border-t border-black/10 flex justify-end">
           <button
             onClick={onClose}
-            className="font-modern text-xs font-semibold px-4 py-2 rounded-full bg-stone/30 hover:bg-stone/50 text-white transition-colors"
+            className="font-modern text-xs font-semibold px-4 py-2 rounded-full bg-black/5 hover:bg-black/10 text-[#1a1a1a] transition-colors"
           >
             Close
           </button>
