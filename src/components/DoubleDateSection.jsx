@@ -34,40 +34,31 @@ export default function DoubleDateSection() {
     <section
       ref={sectionRef}
       id="double-date-section"
-      className="relative w-full bg-[#5a000f] text-white overflow-hidden select-none scroll-mt-[5.5rem]"
+      className="relative w-full bg-white text-mirrorBlack overflow-hidden select-none scroll-mt-[5.5rem]"
     >
-      <div className="relative w-full max-w-[1024px] h-[425px] mx-auto pt-[18px] md:pt-[3.5px] pb-[18px] box-border flex flex-col items-center">
+      <div className="relative w-full max-w-[1024px] mx-auto pt-14 sm:pt-16 md:pt-[36px] pb-14 sm:pb-16 md:pb-[44px] px-6 sm:px-8 box-border flex flex-col items-center">
         {/* Top Header & Copy Group */}
         <div
-          className={`flex flex-col items-center text-center px-4 transition-all duration-700 ${
+          className={`flex flex-col items-center text-center max-w-[780px] px-4 transition-all duration-700 ${
             isVisible ? 'doubledate-fade-in-up' : 'opacity-0 translate-y-6'
           }`}
         >
           {/* Section Headline */}
-          <h2 className="font-society font-bold text-[25px] sm:text-[27px] md:text-[27.6px] leading-[28px] md:leading-[28px] tracking-[-0.012em] text-white antialiased mb-[12.5px] md:translate-x-[1.5px]">
-            Party of <span className="italic">four</span>
+          <h2 className="font-society font-bold text-[32px] sm:text-[36px] md:text-[40px] leading-[1.12] tracking-[-0.015em] text-mirrorBlack antialiased mb-[14px] md:mb-[16px]">
+            Forget your type
           </h2>
 
           {/* Section Body Text Paragraphs */}
-          <div className="font-modern font-normal text-[11px] sm:text-[11.1px] md:text-[11.15px] leading-[16px] md:leading-[16px] tracking-[-0.002em] text-white text-center antialiased max-w-[620px]">
-            <p className="m-0 p-0 sm:whitespace-nowrap">
-              First dates don't have to feel like job interviews.
-            </p>
-            <p className="m-0 p-0 sm:whitespace-nowrap">
-              <strong className="font-bold">Double Date</strong> changes the math: you bring your person, they bring theirs, and
-            </p>
-            <p className="m-0 p-0 sm:whitespace-nowrap">
-              suddenly it's just four people at a table seeing what happens. Less pressure.
-            </p>
-            <p className="m-0 p-0 sm:whitespace-nowrap">
-              More fun. The kind of night that's good either way.
+          <div className="font-modern font-normal text-[13.5px] sm:text-[14.5px] md:text-[15.5px] leading-[21px] sm:leading-[23px] md:leading-[24px] tracking-[0.001em] text-mirrorBlack text-center antialiased max-w-[640px]">
+            <p className="m-0 p-0">
+              Your type might be exactly what’s holding you back. Our AI looks at who you are, who you choose, and who actually fits you to find the connection you didn’t know to look for.
             </p>
           </div>
         </div>
 
         {/* 4 Photos Collage Showcase */}
         <div
-          className={`relative w-full max-w-[1024px] mt-[36px] md:mt-[50px] px-4 md:px-0 flex justify-center items-center overflow-visible transition-all duration-1000 ${
+          className={`relative w-full max-w-[1024px] mt-8 sm:mt-10 md:mt-[40px] px-4 md:px-0 flex justify-center items-center overflow-visible transition-all duration-1000 ${
             isVisible ? 'doubledate-fade-in-up-delayed' : 'opacity-0 translate-y-10'
           }`}
         >
