@@ -6,22 +6,22 @@ export default function ActionModal({ activeModal, onClose }) {
 
   const contentMap = {
     mission: {
-      title: 'Our Values',
-      subtitle: 'Relationships are at the core of everything we do',
+      title: 'Our Philosophy',
+      subtitle: 'Dating shouldn’t feel like shopping',
       icon: Heart,
       body: (
         <div className="space-y-4 text-stone-25 font-modern text-[14.5px] leading-relaxed">
           <p className="text-white font-tiempos text-xl leading-snug">
-            Relationships are at the core of everything we do.
+            Dating shouldn&rsquo;t feel like shopping.
           </p>
           <p>
-            And not just the romantic kind. We can&rsquo;t accomplish really hard things alone&mdash;so we make great relationships the foundation of our teamwork.
+            You shouldn&rsquo;t have to judge hundreds of faces, play games, or hope an algorithm eventually gets lucky. We believe finding someone should be about understanding people deeply&mdash;and making fewer, better introductions.
           </p>
           <p>
-            We believe these three core values are what it takes to build those great relationships.
+            We believe these three principles are what make better dating possible.
           </p>
           <div className="bg-[#242424] p-4 rounded-xl border border-stone/30 mt-4">
-            <span className="text-xs uppercase tracking-widest text-aubergine-25 font-bold block mb-1">Our Core Mission</span>
+            <span className="text-xs uppercase tracking-widest text-aubergine-25 font-bold block mb-1">Our Philosophy</span>
             <p className="font-modern text-sm text-stone-50">
               Measuring success not by time spent in the app, but by genuine, lasting human connection in the real world.
             </p>

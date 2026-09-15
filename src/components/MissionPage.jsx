@@ -22,32 +22,24 @@ export default function MissionPage({ onNavigate, onOpenModal }) {
         >
           <div className="relative w-full max-w-[1024px] mx-auto px-6 sm:px-12 md:px-[81px] box-border">
             
-            {/* Eyebrow Label: Our Values */}
+            {/* Eyebrow Label: Our Philosophy */}
             <div className="font-modern font-medium text-[12.1px] tracking-[0.005em] text-[#705a6e] leading-none antialiased mb-7 md:mb-8">
-              Our Values
+              Our Philosophy
             </div>
 
             {/* Headline */}
             <h1 className="font-tiempos font-normal text-[28px] sm:text-[31px] md:text-[33.5px] leading-[1.08] md:leading-[35.8px] tracking-[-0.015em] text-[#1a1a1a] antialiased m-0 p-0 mb-7 md:mb-8">
-              Relationships are at the core
-              <br />
-              of everything we do.
+              Dating shouldn&rsquo;t feel like shopping.
             </h1>
 
             {/* Body Paragraph 1 */}
             <p className="font-modern font-normal text-[13px] sm:text-[13.2px] md:text-[13.5px] leading-[18.5px] sm:leading-[19px] md:leading-[19.5px] tracking-[0.001em] text-[#1a1a1a] antialiased max-w-[90%] md:max-w-none m-0 p-0 mb-4 md:mb-5">
-              And not just the romantic kind. We can&rsquo;t accomplish really hard things
-              <br className="hidden md:inline" />
-              {' '}alone&mdash;so we make great relationships the foundation of our
-              <br className="hidden md:inline" />
-              {' '}teamwork.
+              You shouldn&rsquo;t have to judge hundreds of faces, play games, or hope an algorithm eventually gets lucky. We believe finding someone should be about understanding people deeply&mdash;and making fewer, better introductions.
             </p>
 
             {/* Body Paragraph 2 */}
             <p className="font-modern font-normal text-[13px] sm:text-[13.2px] md:text-[13.5px] leading-[18px] sm:leading-[18.5px] md:leading-[19.0px] tracking-[0.001em] text-[#1a1a1a] antialiased max-w-[90%] md:max-w-none m-0 p-0">
-              We believe these three core values are what it takes to build those
-              <br className="hidden md:inline" />
-              {' '}great relationships.
+              We believe these three principles are what make better dating possible.
             </p>
 
           </div>

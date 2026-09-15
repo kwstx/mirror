@@ -33,20 +33,20 @@ export default function ValuesCardsSection() {
   const values = [
     {
       num: '01',
-      title: 'Authenticity',
-      body: 'We share \u2014 never hide \u2014 our words, actions, and intentions.',
+      title: 'Intentionality',
+      body: 'We don\u2019t optimize for more matches. We optimize for the people worth meeting.',
       delay: 0,
     },
     {
       num: '02',
-      title: 'Courage',
-      body: 'Breakthroughs require a willingness to take risks and embrace lofty goals and tough challenges.',
+      title: 'Understanding',
+      body: 'We look beyond photos and preferences to understand personality, values, chemistry, and what you actually want.',
       delay: 100,
     },
     {
       num: '03',
-      title: 'Empathy',
-      body: 'We\u2019re all humans first. So we deeply consider the perspectives of others, listen openly, and speak with care.',
+      title: 'Curiosity',
+      body: 'Your type isn\u2019t always your type. We learn from every interaction, challenge your assumptions, and keep getting better at finding the people you never knew you were looking for.',
       delay: 200,
     },
   ];
