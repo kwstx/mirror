@@ -13,9 +13,9 @@ export default function ReferenceOverlay({ zoom, setZoom, onReplayAnimation }) {
     let targetId = 'hero-section';
     if (section === 'quote') targetId = 'quote-section';
     if (section === 'labs') targetId = 'labs-section';
-    if (section === 'music') targetId = 'music-mode-section';
+    if (section === 'music' || section === 'doubledate') targetId = 'double-date-section';
     if (section === 'footer') targetId = 'footer-section';
-    const el = document.getElementById(targetId);
+    const el = document.getElementById(targetId) || document.getElementById('music-mode-section');
     if (el) {
       el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
@@ -48,12 +48,12 @@ export default function ReferenceOverlay({ zoom, setZoom, onReplayAnimation }) {
                 />
               </div>
             </div>
-          ) : activeSection === 'music' ? (
+          ) : activeSection === 'music' || activeSection === 'doubledate' ? (
             <div className="w-full h-full flex justify-center items-start">
               <div className="w-full max-w-[1024px] pointer-events-none">
                 <img
-                  src="/images/no_skips_reference.png"
-                  alt="Music Mode reference screenshot"
+                  src="/images/party_of_four_reference.png"
+                  alt="Double Date Party of four reference screenshot"
                   className="w-full h-auto object-contain object-top"
                 />
               </div>
@@ -126,11 +126,11 @@ export default function ReferenceOverlay({ zoom, setZoom, onReplayAnimation }) {
                   onClick={() => handleSelectSection('music')}
                   className={`py-1 px-1 rounded-md font-bold text-[10px] transition-colors ${
                     activeSection === 'music'
-                      ? 'bg-pink-600 text-white shadow-sm'
+                      ? 'bg-[#5a000f] text-white shadow-sm ring-1 ring-white/40'
                       : 'bg-stone/30 text-stone-50 hover:text-white'
                   }`}
                 >
-                  Music
+                  Party 4
                 </button>
                 <button
                   onClick={() => handleSelectSection('labs')}

@@ -3,7 +3,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import QuoteSection from './components/QuoteSection';
 import HingeLabsSection from './components/HingeLabsSection';
-import MusicModeSection from './components/MusicModeSection';
+import DoubleDateSection from './components/DoubleDateSection';
 import FooterSection from './components/FooterSection';
 import MobileMenu from './components/MobileMenu';
 import ActionModal from './components/ActionModal';
@@ -42,8 +42,8 @@ export default function App() {
         <QuoteSection />
         {/* Pixel-Perfect Hinge Labs Section */}
         <HingeLabsSection />
-        {/* Pixel-Perfect Music Mode (No skips) Section */}
-        <MusicModeSection />
+        {/* Pixel-Perfect Double Date (Party of four) Section */}
+        <DoubleDateSection />
         {/* Pixel-Perfect Dark Hinge Footer Section */}
         <FooterSection onOpenModal={handleOpenModal} />
       </main>
