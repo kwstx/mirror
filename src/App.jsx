@@ -75,7 +75,7 @@ export default function App() {
   };
 
   return (
-    <div className="relative w-full min-h-screen bg-mirrorBlack font-modern overflow-x-hidden">
+    <div className={`relative w-full min-h-screen ${currentPage === 'mission' ? 'bg-white text-[#1a1a1a]' : 'bg-mirrorBlack text-white'} font-modern overflow-x-hidden transition-colors duration-200`}>
       {/* Top Navbar */}
       <Navbar
         currentPage={currentPage}

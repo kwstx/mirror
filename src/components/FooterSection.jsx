@@ -1,16 +1,18 @@
 import React from 'react';
 
-export default function FooterSection({ onOpenModal, onNavigate }) {
+export default function FooterSection({ onOpenModal, onNavigate, theme = 'dark' }) {
+  const isLight = theme === 'light';
+
   return (
     <footer
       id="footer-section"
-      className="relative w-full bg-[#1a1a1a] text-white select-none scroll-mt-10"
+      className={`relative w-full ${isLight ? 'bg-white text-[#1a1a1a]' : 'bg-[#1a1a1a] text-white'} select-none scroll-mt-10`}
     >
       {/* 1024px Max Width Canvas matching exact layout coordinates */}
       <div className="relative w-full max-w-[1024px] mx-auto px-6 md:px-[78px] pt-[30px] pb-16 md:pb-[56px] box-border">
         
         {/* Top Dividing Line (y=30, x=78..935, width=858px) */}
-        <div className="w-full max-w-[858px] h-[1px] bg-[#353535] mx-auto" />
+        <div className={`w-full max-w-[858px] h-[1px] ${isLight ? 'bg-[#e5e5e5]' : 'bg-[#353535]'} mx-auto`} />
 
         {/* Main Content Grid (Starts at y=128, exactly 98px below divider) */}
         <div className="relative w-full pt-[98px] flex flex-col md:flex-row justify-between items-start">
@@ -29,7 +31,7 @@ export default function FooterSection({ onOpenModal, onNavigate }) {
                 className="inline-block hover:opacity-90 transition-opacity focus:outline-none cursor-pointer"
                 aria-label="Cupid Homepage"
               >
-                <span className="font-tiempos font-bold text-[25.5px] leading-none tracking-[-0.015em] text-white antialiased">
+                <span className={`font-tiempos font-bold text-[25.5px] leading-none tracking-[-0.015em] ${isLight ? 'text-[#1a1a1a]' : 'text-white'} antialiased`}>
                   Cupid
                 </span>
               </a>
@@ -37,21 +39,21 @@ export default function FooterSection({ onOpenModal, onNavigate }) {
 
             {/* Bottom Row: Copyright + Language Selector (at y=366) */}
             <div className="mt-12 md:mt-[215px] flex flex-wrap items-center gap-[18px]">
-              <span className="font-modern font-normal text-[11px] text-[#a1a0a0] leading-none antialiased">
+              <span className={`font-modern font-normal text-[11px] ${isLight ? 'text-[#737373]' : 'text-[#a1a0a0]'} leading-none antialiased`}>
                 &copy; 2026 Cupid Inc.
               </span>
               <button
                 onClick={() => onOpenModal && onOpenModal('language')}
-                className="flex items-center gap-[5px] text-white hover:text-white/80 transition-colors focus:outline-none group"
+                className={`flex items-center gap-[5px] ${isLight ? 'text-[#1a1a1a] hover:text-aubergine' : 'text-white hover:text-white/80'} transition-colors focus:outline-none group`}
                 aria-label="Language selector: English (UK)"
               >
                 <img
                   src="/images/footer_icon_globe_transparent.png"
                   alt="Globe icon"
-                  className="w-[11.5px] h-[11.5px] object-contain select-none pointer-events-none group-hover:scale-110 transition-transform"
+                  className={`w-[11.5px] h-[11.5px] object-contain select-none pointer-events-none group-hover:scale-110 transition-transform ${isLight ? 'filter invert' : ''}`}
                   loading="lazy"
                 />
-                <span className="font-modern font-bold text-[11px] leading-none text-white antialiased">
+                <span className={`font-modern font-bold text-[11px] leading-none ${isLight ? 'text-[#1a1a1a]' : 'text-white'} antialiased`}>
                   English (UK)
                 </span>
               </button>
@@ -63,7 +65,7 @@ export default function FooterSection({ onOpenModal, onNavigate }) {
             
             {/* Column 1: Index (x=507, width=143px) */}
             <div className="w-full md:w-[143px] md:pr-2">
-              <h3 className="font-modern font-normal text-[12px] text-[#a1a2a3] leading-none mb-[16px] antialiased">
+              <h3 className={`font-modern font-normal text-[12px] ${isLight ? 'text-[#737373]' : 'text-[#a1a2a3]'} leading-none mb-[16px] antialiased`}>
                 Index
               </h3>
               <ul className="space-y-[13px] m-0 p-0 list-none">
@@ -73,7 +75,7 @@ export default function FooterSection({ onOpenModal, onNavigate }) {
                       if (onNavigate) onNavigate('mission');
                       else if (onOpenModal) onOpenModal('mission');
                     }}
-                    className="font-modern font-bold text-[12px] text-white hover:text-white/80 transition-colors leading-none text-left focus:outline-none"
+                    className={`font-modern font-bold text-[12px] ${isLight ? 'text-[#1a1a1a] hover:text-aubergine' : 'text-white hover:text-white/80'} transition-colors leading-none text-left focus:outline-none`}
                   >
                     Mission
                   </button>
@@ -81,7 +83,7 @@ export default function FooterSection({ onOpenModal, onNavigate }) {
                 <li>
                   <button
                     onClick={() => onOpenModal && onOpenModal('careers')}
-                    className="font-modern font-bold text-[12px] text-white hover:text-white/80 transition-colors leading-none text-left focus:outline-none"
+                    className={`font-modern font-bold text-[12px] ${isLight ? 'text-[#1a1a1a] hover:text-aubergine' : 'text-white hover:text-white/80'} transition-colors leading-none text-left focus:outline-none`}
                   >
                     Careers
                   </button>
@@ -97,7 +99,7 @@ export default function FooterSection({ onOpenModal, onNavigate }) {
                         else if (onOpenModal) onOpenModal('labs');
                       }
                     }}
-                    className="font-modern font-bold text-[12px] text-white hover:text-white/80 transition-colors leading-none text-left focus:outline-none"
+                    className={`font-modern font-bold text-[12px] ${isLight ? 'text-[#1a1a1a] hover:text-aubergine' : 'text-white hover:text-white/80'} transition-colors leading-none text-left focus:outline-none`}
                   >
                     Labs
                   </button>
@@ -105,7 +107,7 @@ export default function FooterSection({ onOpenModal, onNavigate }) {
                 <li>
                   <button
                     onClick={() => onOpenModal && onOpenModal('newsroom')}
-                    className="font-modern font-bold text-[12px] text-white hover:text-white/80 transition-colors leading-none text-left focus:outline-none"
+                    className={`font-modern font-bold text-[12px] ${isLight ? 'text-[#1a1a1a] hover:text-aubergine' : 'text-white hover:text-white/80'} transition-colors leading-none text-left focus:outline-none`}
                   >
                     Newsroom
                   </button>
@@ -113,7 +115,7 @@ export default function FooterSection({ onOpenModal, onNavigate }) {
                 <li>
                   <button
                     onClick={() => onOpenModal && onOpenModal('success')}
-                    className="font-modern font-bold text-[12px] text-white hover:text-white/80 transition-colors leading-none text-left focus:outline-none"
+                    className={`font-modern font-bold text-[12px] ${isLight ? 'text-[#1a1a1a] hover:text-aubergine' : 'text-white hover:text-white/80'} transition-colors leading-none text-left focus:outline-none`}
                   >
                     Success Stories
                   </button>
@@ -121,7 +123,7 @@ export default function FooterSection({ onOpenModal, onNavigate }) {
                 <li>
                   <button
                     onClick={() => onOpenModal && onOpenModal('history')}
-                    className="font-modern font-bold text-[12px] text-white hover:text-white/80 transition-colors leading-none text-left focus:outline-none"
+                    className={`font-modern font-bold text-[12px] ${isLight ? 'text-[#1a1a1a] hover:text-aubergine' : 'text-white hover:text-white/80'} transition-colors leading-none text-left focus:outline-none`}
                   >
                     History
                   </button>
@@ -130,7 +132,7 @@ export default function FooterSection({ onOpenModal, onNavigate }) {
                   <div className="flex items-center gap-[7px]">
                     <button
                       onClick={() => onOpenModal && onOpenModal('contact')}
-                      className="font-modern font-bold text-[12px] text-white hover:text-white/80 transition-colors leading-none text-left focus:outline-none"
+                      className={`font-modern font-bold text-[12px] ${isLight ? 'text-[#1a1a1a] hover:text-aubergine' : 'text-white hover:text-white/80'} transition-colors leading-none text-left focus:outline-none`}
                     >
                       Contact
                     </button>
@@ -144,7 +146,7 @@ export default function FooterSection({ onOpenModal, onNavigate }) {
                       <img
                         src="/images/footer_icon_twitter_transparent.png"
                         alt="Twitter"
-                        className="w-[12px] h-[10px] object-contain select-none pointer-events-none"
+                        className={`w-[12px] h-[10px] object-contain select-none pointer-events-none ${isLight ? 'filter invert' : ''}`}
                         loading="lazy"
                       />
                     </a>
@@ -158,7 +160,7 @@ export default function FooterSection({ onOpenModal, onNavigate }) {
                       <img
                         src="/images/footer_icon_instagram_transparent.png"
                         alt="Instagram"
-                        className="w-[11px] h-[10px] object-contain select-none pointer-events-none"
+                        className={`w-[11px] h-[10px] object-contain select-none pointer-events-none ${isLight ? 'filter invert' : ''}`}
                         loading="lazy"
                       />
                     </a>
@@ -169,14 +171,14 @@ export default function FooterSection({ onOpenModal, onNavigate }) {
 
             {/* Column 2: Resources (x=650, width=143px) */}
             <div className="w-full md:w-[143px] md:pr-2">
-              <h3 className="font-modern font-normal text-[12px] text-[#a1a2a3] leading-none mb-[16px] antialiased">
+              <h3 className={`font-modern font-normal text-[12px] ${isLight ? 'text-[#737373]' : 'text-[#a1a2a3]'} leading-none mb-[16px] antialiased`}>
                 Resources
               </h3>
               <ul className="space-y-[13px] m-0 p-0 list-none">
                 <li>
                   <button
                     onClick={() => onOpenModal && onOpenModal('dating_tips')}
-                    className="font-modern font-bold text-[12px] text-white hover:text-white/80 transition-colors leading-none text-left focus:outline-none"
+                    className={`font-modern font-bold text-[12px] ${isLight ? 'text-[#1a1a1a] hover:text-aubergine' : 'text-white hover:text-white/80'} transition-colors leading-none text-left focus:outline-none`}
                   >
                     Safe Dating Tips
                   </button>
@@ -184,7 +186,7 @@ export default function FooterSection({ onOpenModal, onNavigate }) {
                 <li>
                   <button
                     onClick={() => onOpenModal && onOpenModal('faq')}
-                    className="font-modern font-bold text-[12px] text-white hover:text-white/80 transition-colors leading-none text-left focus:outline-none"
+                    className={`font-modern font-bold text-[12px] ${isLight ? 'text-[#1a1a1a] hover:text-aubergine' : 'text-white hover:text-white/80'} transition-colors leading-none text-left focus:outline-none`}
                   >
                     FAQ
                   </button>
@@ -192,7 +194,7 @@ export default function FooterSection({ onOpenModal, onNavigate }) {
                 <li>
                   <button
                     onClick={() => onOpenModal && onOpenModal('trust_safety')}
-                    className="font-modern font-bold text-[12px] text-white hover:text-white/80 transition-colors leading-none text-left focus:outline-none"
+                    className={`font-modern font-bold text-[12px] ${isLight ? 'text-[#1a1a1a] hover:text-aubergine' : 'text-white hover:text-white/80'} transition-colors leading-none text-left focus:outline-none`}
                   >
                     Trust & Safety
                   </button>
@@ -200,7 +202,7 @@ export default function FooterSection({ onOpenModal, onNavigate }) {
                 <li>
                   <button
                     onClick={() => onOpenModal && onOpenModal('press')}
-                    className="font-modern font-bold text-[12px] text-white hover:text-white/80 transition-colors leading-none text-left focus:outline-none"
+                    className={`font-modern font-bold text-[12px] ${isLight ? 'text-[#1a1a1a] hover:text-aubergine' : 'text-white hover:text-white/80'} transition-colors leading-none text-left focus:outline-none`}
                   >
                     Press Resources
                   </button>
@@ -208,7 +210,7 @@ export default function FooterSection({ onOpenModal, onNavigate }) {
                 <li>
                   <button
                     onClick={() => onOpenModal && onOpenModal('how_we_connect')}
-                    className="font-modern font-bold text-[12px] text-white hover:text-white/80 transition-colors leading-[1.3] text-left focus:outline-none"
+                    className={`font-modern font-bold text-[12px] ${isLight ? 'text-[#1a1a1a] hover:text-aubergine' : 'text-white hover:text-white/80'} transition-colors leading-[1.3] text-left focus:outline-none`}
                   >
                     <span className="block">How We Connect</span>
                     <span className="block">Daters</span>
@@ -217,7 +219,7 @@ export default function FooterSection({ onOpenModal, onNavigate }) {
                 <li>
                   <button
                     onClick={() => onOpenModal && onOpenModal('nfaq')}
-                    className="font-modern font-bold text-[12px] text-white hover:text-white/80 transition-colors leading-[1.3] text-left focus:outline-none"
+                    className={`font-modern font-bold text-[12px] ${isLight ? 'text-[#1a1a1a] hover:text-aubergine' : 'text-white hover:text-white/80'} transition-colors leading-[1.3] text-left focus:outline-none`}
                   >
                     <span className="block">NFAQ (Not-so</span>
                     <span className="block">Frequently Asked</span>
@@ -229,14 +231,14 @@ export default function FooterSection({ onOpenModal, onNavigate }) {
 
             {/* Column 3: Legal (x=793, width=143px) */}
             <div className="w-full md:w-[143px]">
-              <h3 className="font-modern font-normal text-[12px] text-[#a1a2a3] leading-none mb-[16px] antialiased">
+              <h3 className={`font-modern font-normal text-[12px] ${isLight ? 'text-[#737373]' : 'text-[#a1a2a3]'} leading-none mb-[16px] antialiased`}>
                 Legal
               </h3>
               <ul className="space-y-[13px] m-0 p-0 list-none">
                 <li>
                   <button
                     onClick={() => onOpenModal && onOpenModal('security')}
-                    className="font-modern font-bold text-[12px] text-white hover:text-white/80 transition-colors leading-none text-left focus:outline-none"
+                    className={`font-modern font-bold text-[12px] ${isLight ? 'text-[#1a1a1a] hover:text-aubergine' : 'text-white hover:text-white/80'} transition-colors leading-none text-left focus:outline-none`}
                   >
                     Security
                   </button>
@@ -244,7 +246,7 @@ export default function FooterSection({ onOpenModal, onNavigate }) {
                 <li>
                   <button
                     onClick={() => onOpenModal && onOpenModal('terms')}
-                    className="font-modern font-bold text-[12px] text-white hover:text-white/80 transition-colors leading-none text-left focus:outline-none"
+                    className={`font-modern font-bold text-[12px] ${isLight ? 'text-[#1a1a1a] hover:text-aubergine' : 'text-white hover:text-white/80'} transition-colors leading-none text-left focus:outline-none`}
                   >
                     Terms
                   </button>
@@ -252,7 +254,7 @@ export default function FooterSection({ onOpenModal, onNavigate }) {
                 <li>
                   <button
                     onClick={() => onOpenModal && onOpenModal('privacy')}
-                    className="font-modern font-bold text-[12px] text-white hover:text-white/80 transition-colors leading-none text-left focus:outline-none"
+                    className={`font-modern font-bold text-[12px] ${isLight ? 'text-[#1a1a1a] hover:text-aubergine' : 'text-white hover:text-white/80'} transition-colors leading-none text-left focus:outline-none`}
                   >
                     Privacy
                   </button>
@@ -260,7 +262,7 @@ export default function FooterSection({ onOpenModal, onNavigate }) {
                 <li>
                   <button
                     onClick={() => onOpenModal && onOpenModal('cookie_policy')}
-                    className="font-modern font-bold text-[12px] text-white hover:text-white/80 transition-colors leading-none text-left focus:outline-none"
+                    className={`font-modern font-bold text-[12px] ${isLight ? 'text-[#1a1a1a] hover:text-aubergine' : 'text-white hover:text-white/80'} transition-colors leading-none text-left focus:outline-none`}
                   >
                     Cookie Policy
                   </button>
@@ -268,7 +270,7 @@ export default function FooterSection({ onOpenModal, onNavigate }) {
                 <li>
                   <button
                     onClick={() => onOpenModal && onOpenModal('consumer_health')}
-                    className="font-modern font-bold text-[12px] text-white hover:text-white/80 transition-colors leading-[1.3] text-left focus:outline-none"
+                    className={`font-modern font-bold text-[12px] ${isLight ? 'text-[#1a1a1a] hover:text-aubergine' : 'text-white hover:text-white/80'} transition-colors leading-[1.3] text-left focus:outline-none`}
                   >
                     <span className="block">Consumer Health Data</span>
                     <span className="block">Privacy Policy</span>
@@ -278,7 +280,7 @@ export default function FooterSection({ onOpenModal, onNavigate }) {
                   <div className="flex items-center gap-[5px]">
                     <button
                       onClick={() => onOpenModal && onOpenModal('privacy_choices')}
-                      className="font-modern font-bold text-[12px] text-white hover:text-white/80 transition-colors leading-none text-left focus:outline-none"
+                      className={`font-modern font-bold text-[12px] ${isLight ? 'text-[#1a1a1a] hover:text-aubergine' : 'text-white hover:text-white/80'} transition-colors leading-none text-left focus:outline-none`}
                     >
                       Your Privacy Choices
                     </button>
@@ -293,7 +295,7 @@ export default function FooterSection({ onOpenModal, onNavigate }) {
                 <li>
                   <button
                     onClick={() => onOpenModal && onOpenModal('colorado_safety')}
-                    className="font-modern font-bold text-[12px] text-white hover:text-white/80 transition-colors leading-[1.3] text-left focus:outline-none"
+                    className={`font-modern font-bold text-[12px] ${isLight ? 'text-[#1a1a1a] hover:text-aubergine' : 'text-white hover:text-white/80'} transition-colors leading-[1.3] text-left focus:outline-none`}
                   >
                     <span className="block">Colorado Safety Policy</span>
                     <span className="block">Information</span>
@@ -302,7 +304,7 @@ export default function FooterSection({ onOpenModal, onNavigate }) {
                 <li>
                   <button
                     onClick={() => onOpenModal && onOpenModal('australia_safety')}
-                    className="font-modern font-bold text-[12px] text-white hover:text-white/80 transition-colors leading-none text-left focus:outline-none"
+                    className={`font-modern font-bold text-[12px] ${isLight ? 'text-[#1a1a1a] hover:text-aubergine' : 'text-white hover:text-white/80'} transition-colors leading-none text-left focus:outline-none`}
                   >
                     Australia Safety Page
                   </button>
@@ -310,7 +312,7 @@ export default function FooterSection({ onOpenModal, onNavigate }) {
                 <li>
                   <button
                     onClick={() => onOpenModal && onOpenModal('accessibility')}
-                    className="font-modern font-bold text-[12px] text-white hover:text-white/80 transition-colors leading-none text-left focus:outline-none"
+                    className={`font-modern font-bold text-[12px] ${isLight ? 'text-[#1a1a1a] hover:text-aubergine' : 'text-white hover:text-white/80'} transition-colors leading-none text-left focus:outline-none`}
                   >
                     Accessibility Statement
                   </button>

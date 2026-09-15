@@ -1,10 +1,18 @@
 import React, { useState } from 'react';
 
 export default function Navbar({ onOpenModal, onToggleMobileMenu, onNavigate, currentPage }) {
+  const isLight = currentPage === 'mission';
+
   return (
     <header className="fixed top-0 left-0 w-full z-40 h-[4.75rem] md:h-[5.5rem] transition-all duration-300">
-      {/* Top subtle dark gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/15 to-transparent pointer-events-none" />
+      {/* Top subtle gradient */}
+      <div
+        className={`absolute inset-0 ${
+          isLight
+            ? 'bg-gradient-to-b from-white/90 via-white/50 to-transparent backdrop-blur-[2px]'
+            : 'bg-gradient-to-b from-black/45 via-black/15 to-transparent'
+        } pointer-events-none`}
+      />
 
       <div className="relative w-full h-full px-6 md:px-12 lg:px-16 flex items-center justify-between">
         
@@ -13,11 +21,11 @@ export default function Navbar({ onOpenModal, onToggleMobileMenu, onNavigate, cu
           <button
             onClick={onToggleMobileMenu}
             aria-label="Toggle Navigation Menu"
-            className="text-white p-2 focus:outline-none hover:opacity-80 transition-opacity"
+            className={`${isLight ? 'text-[#1a1a1a]' : 'text-white'} p-2 focus:outline-none hover:opacity-80 transition-opacity`}
           >
             <div className="w-6 h-4 flex flex-col justify-between">
-              <span className="w-full h-[2px] bg-white rounded-full"></span>
-              <span className="w-full h-[2px] bg-white rounded-full"></span>
+              <span className={`w-full h-[2px] ${isLight ? 'bg-[#1a1a1a]' : 'bg-white'} rounded-full`}></span>
+              <span className={`w-full h-[2px] ${isLight ? 'bg-[#1a1a1a]' : 'bg-white'} rounded-full`}></span>
             </div>
           </button>
         </div>
@@ -33,14 +41,18 @@ export default function Navbar({ onOpenModal, onToggleMobileMenu, onNavigate, cu
               }
             }}
             className={`font-modern font-medium text-[15.5px] tracking-[0.005em] transition-colors focus:outline-none ${
-              currentPage === 'mission' ? 'text-aubergine-25 font-semibold' : 'text-white hover:text-white/80'
+              isLight
+                ? 'text-aubergine font-bold'
+                : (currentPage === 'mission' ? 'text-aubergine-25 font-semibold' : 'text-white hover:text-white/80')
             }`}
           >
             Mission
           </button>
           <button
             onClick={() => onOpenModal('impact')}
-            className="font-modern font-medium text-[15.5px] tracking-[0.005em] text-white hover:text-white/80 transition-colors focus:outline-none"
+            className={`font-modern font-medium text-[15.5px] tracking-[0.005em] ${
+              isLight ? 'text-[#1a1a1a] hover:text-aubergine' : 'text-white hover:text-white/80'
+            } transition-colors focus:outline-none`}
           >
             Impact
           </button>
@@ -57,7 +69,9 @@ export default function Navbar({ onOpenModal, onToggleMobileMenu, onNavigate, cu
                 }
               }
             }}
-            className="font-modern font-medium text-[15.5px] tracking-[0.005em] text-white hover:text-white/80 transition-colors focus:outline-none"
+            className={`font-modern font-medium text-[15.5px] tracking-[0.005em] ${
+              isLight ? 'text-[#1a1a1a] hover:text-aubergine' : 'text-white hover:text-white/80'
+            } transition-colors focus:outline-none`}
           >
             Labs
           </button>
@@ -75,7 +89,13 @@ export default function Navbar({ onOpenModal, onToggleMobileMenu, onNavigate, cu
             aria-label="Cupid Homepage"
             className="inline-block hover:opacity-95 transition-opacity select-none cursor-pointer"
           >
-            <span className="font-tiempos font-bold text-[30px] md:text-[36px] tracking-[-0.02em] leading-none text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.3)]">
+            <span
+              className={`font-tiempos font-bold text-[30px] md:text-[36px] tracking-[-0.02em] leading-none ${
+                isLight
+                  ? 'text-[#1a1a1a]'
+                  : 'text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.3)]'
+              }`}
+            >
               Cupid
             </span>
           </a>
@@ -85,13 +105,17 @@ export default function Navbar({ onOpenModal, onToggleMobileMenu, onNavigate, cu
         <nav className="hidden md:flex items-center space-x-9 lg:space-x-11">
           <button
             onClick={() => onOpenModal('newsroom')}
-            className="font-modern font-medium text-[15.5px] tracking-[0.005em] text-white hover:text-white/80 transition-colors focus:outline-none"
+            className={`font-modern font-medium text-[15.5px] tracking-[0.005em] ${
+              isLight ? 'text-[#1a1a1a] hover:text-aubergine' : 'text-white hover:text-white/80'
+            } transition-colors focus:outline-none`}
           >
             Newsroom
           </button>
           <button
             onClick={() => onOpenModal('careers')}
-            className="font-modern font-medium text-[15.5px] tracking-[0.005em] text-white hover:text-white/80 transition-colors focus:outline-none"
+            className={`font-modern font-medium text-[15.5px] tracking-[0.005em] ${
+              isLight ? 'text-[#1a1a1a] hover:text-aubergine' : 'text-white hover:text-white/80'
+            } transition-colors focus:outline-none`}
           >
             Careers
           </button>
@@ -101,7 +125,11 @@ export default function Navbar({ onOpenModal, onToggleMobileMenu, onNavigate, cu
         <div className="flex md:hidden items-center">
           <button
             onClick={() => onOpenModal('download')}
-            className="font-modern font-bold text-xs bg-white text-mirrorBlack px-3.5 py-1.5 rounded-full hover:bg-aubergine hover:text-white transition-colors"
+            className={`font-modern font-bold text-xs ${
+              isLight
+                ? 'bg-[#1a1a1a] text-white hover:bg-aubergine'
+                : 'bg-white text-mirrorBlack hover:bg-aubergine hover:text-white'
+            } px-3.5 py-1.5 rounded-full transition-colors`}
           >
             Download
           </button>
