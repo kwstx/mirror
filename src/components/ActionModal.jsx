@@ -15,9 +15,6 @@ function WaitlistModalContent() {
   if (submitted) {
     return (
       <div className="space-y-4 text-center py-4">
-        <div className="w-12 h-12 rounded-full bg-aubergine/40 text-aubergine-25 mx-auto flex items-center justify-center">
-          <Sparkles className="w-6 h-6 text-aubergine-25" />
-        </div>
         <h4 className="font-tiempos text-xl text-white font-medium">You&rsquo;re on the waitlist!</h4>
         <p className="font-modern text-sm text-stone-25">
           Thank you for joining. We&rsquo;ll send exclusive early access to <span className="text-white font-semibold">{email}</span> as soon as spots open up.
@@ -66,7 +63,7 @@ export default function ActionModal({ activeModal, onClose }) {
     waitlist: {
       title: 'Join the Waitlist',
       subtitle: 'Early access to Cupid',
-      icon: Sparkles,
+      icon: null,
       body: <WaitlistModalContent />,
     },
     mission: {
@@ -269,10 +266,12 @@ export default function ActionModal({ activeModal, onClose }) {
         </button>
 
         {/* Header */}
-        <div className="flex items-center space-x-3 mb-4">
-          <div className="w-10 h-10 rounded-full bg-aubergine/30 flex items-center justify-center text-aubergine-25">
-            <IconComponent className="w-5 h-5" />
-          </div>
+        <div className={`flex items-center ${IconComponent ? 'space-x-3' : ''} mb-4`}>
+          {IconComponent && (
+            <div className="w-10 h-10 rounded-full bg-aubergine/30 flex items-center justify-center text-aubergine-25 flex-shrink-0">
+              <IconComponent className="w-5 h-5" />
+            </div>
+          )}
           <div>
             <h3 className="font-tiempos text-2xl font-semibold text-white">
               {item.title}
