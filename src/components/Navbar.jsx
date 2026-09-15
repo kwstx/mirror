@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function Navbar({ onOpenModal, onToggleMobileMenu }) {
+export default function Navbar({ onOpenModal, onToggleMobileMenu, onNavigate, currentPage }) {
   return (
     <header className="fixed top-0 left-0 w-full z-40 h-[4.75rem] md:h-[5.5rem] transition-all duration-300">
       {/* Top subtle dark gradient */}
@@ -25,8 +25,16 @@ export default function Navbar({ onOpenModal, onToggleMobileMenu }) {
         {/* Desktop Left Nav Links */}
         <nav className="hidden md:flex items-center space-x-9 lg:space-x-11">
           <button
-            onClick={() => onOpenModal('mission')}
-            className="font-modern font-medium text-[15.5px] tracking-[0.005em] text-white hover:text-white/80 transition-colors focus:outline-none"
+            onClick={() => {
+              if (onNavigate) {
+                onNavigate('mission');
+              } else {
+                onOpenModal('mission');
+              }
+            }}
+            className={`font-modern font-medium text-[15.5px] tracking-[0.005em] transition-colors focus:outline-none ${
+              currentPage === 'mission' ? 'text-aubergine-25 font-semibold' : 'text-white hover:text-white/80'
+            }`}
           >
             Mission
           </button>
@@ -38,11 +46,15 @@ export default function Navbar({ onOpenModal, onToggleMobileMenu }) {
           </button>
           <button
             onClick={() => {
-              const el = document.getElementById('labs-section');
-              if (el) {
-                el.scrollIntoView({ behavior: 'smooth' });
+              if (currentPage === 'mission' && onNavigate) {
+                onNavigate('home', 'labs-section');
               } else {
-                onOpenModal('labs');
+                const el = document.getElementById('labs-section');
+                if (el) {
+                  el.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                  onOpenModal('labs');
+                }
               }
             }}
             className="font-modern font-medium text-[15.5px] tracking-[0.005em] text-white hover:text-white/80 transition-colors focus:outline-none"
@@ -51,15 +63,20 @@ export default function Navbar({ onOpenModal, onToggleMobileMenu }) {
           </button>
         </nav>
 
-        {/* Centered Mirror Brand Logo */}
+        {/* Centered Cupid Brand Logo */}
         <div className="absolute left-1/2 -translate-x-1/2 flex items-center justify-center">
           <a
             href="/"
-            aria-label="Mirror Homepage"
-            className="inline-block hover:opacity-95 transition-opacity select-none"
+            onClick={(e) => {
+              e.preventDefault();
+              if (onNavigate) onNavigate('home');
+              else window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            aria-label="Cupid Homepage"
+            className="inline-block hover:opacity-95 transition-opacity select-none cursor-pointer"
           >
             <span className="font-tiempos font-bold text-[30px] md:text-[36px] tracking-[-0.02em] leading-none text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.3)]">
-              Mirror
+              Cupid
             </span>
           </a>
         </div>

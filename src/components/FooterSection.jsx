@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function FooterSection({ onOpenModal }) {
+export default function FooterSection({ onOpenModal, onNavigate }) {
   return (
     <footer
       id="footer-section"
@@ -17,15 +17,20 @@ export default function FooterSection({ onOpenModal }) {
           
           {/* Left Column: Brand Logo + Bottom Copyright & Language */}
           <div className="w-full md:w-[429px] flex flex-col justify-between self-stretch mb-10 md:mb-0">
-            {/* Brand Wordmark (Hinge) at x=78, y=128 */}
+            {/* Brand Wordmark (Cupid) at x=78, y=128 */}
             <div>
               <a
                 href="/"
-                className="inline-block hover:opacity-90 transition-opacity focus:outline-none"
-                aria-label="Hinge Homepage"
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (onNavigate) onNavigate('home');
+                  else window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                className="inline-block hover:opacity-90 transition-opacity focus:outline-none cursor-pointer"
+                aria-label="Cupid Homepage"
               >
                 <span className="font-tiempos font-bold text-[25.5px] leading-none tracking-[-0.015em] text-white antialiased">
-                  Hinge
+                  Cupid
                 </span>
               </a>
             </div>
@@ -33,7 +38,7 @@ export default function FooterSection({ onOpenModal }) {
             {/* Bottom Row: Copyright + Language Selector (at y=366) */}
             <div className="mt-12 md:mt-[215px] flex flex-wrap items-center gap-[18px]">
               <span className="font-modern font-normal text-[11px] text-[#a1a0a0] leading-none antialiased">
-                &copy; 2026 Hinge Inc.
+                &copy; 2026 Cupid Inc.
               </span>
               <button
                 onClick={() => onOpenModal && onOpenModal('language')}
@@ -64,7 +69,10 @@ export default function FooterSection({ onOpenModal }) {
               <ul className="space-y-[13px] m-0 p-0 list-none">
                 <li>
                   <button
-                    onClick={() => onOpenModal && onOpenModal('mission')}
+                    onClick={() => {
+                      if (onNavigate) onNavigate('mission');
+                      else if (onOpenModal) onOpenModal('mission');
+                    }}
                     className="font-modern font-bold text-[12px] text-white hover:text-white/80 transition-colors leading-none text-left focus:outline-none"
                   >
                     Mission
@@ -81,9 +89,13 @@ export default function FooterSection({ onOpenModal }) {
                 <li>
                   <button
                     onClick={() => {
-                      const el = document.getElementById('labs-section');
-                      if (el) el.scrollIntoView({ behavior: 'smooth' });
-                      else if (onOpenModal) onOpenModal('labs');
+                      if (onNavigate) {
+                        onNavigate('home', 'labs-section');
+                      } else {
+                        const el = document.getElementById('labs-section');
+                        if (el) el.scrollIntoView({ behavior: 'smooth' });
+                        else if (onOpenModal) onOpenModal('labs');
+                      }
                     }}
                     className="font-modern font-bold text-[12px] text-white hover:text-white/80 transition-colors leading-none text-left focus:outline-none"
                   >
@@ -123,11 +135,11 @@ export default function FooterSection({ onOpenModal }) {
                       Contact
                     </button>
                     <a
-                      href="https://twitter.com/hinge"
+                      href="https://twitter.com/cupid"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="hover:opacity-75 transition-opacity inline-flex items-center"
-                      aria-label="Hinge on Twitter / X"
+                      aria-label="Cupid on Twitter / X"
                     >
                       <img
                         src="/images/footer_icon_twitter_transparent.png"
@@ -137,11 +149,11 @@ export default function FooterSection({ onOpenModal }) {
                       />
                     </a>
                     <a
-                      href="https://instagram.com/hinge"
+                      href="https://instagram.com/cupid"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="hover:opacity-75 transition-opacity inline-flex items-center"
-                      aria-label="Hinge on Instagram"
+                      aria-label="Cupid on Instagram"
                     >
                       <img
                         src="/images/footer_icon_instagram_transparent.png"

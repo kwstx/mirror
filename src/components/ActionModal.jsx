@@ -6,21 +6,24 @@ export default function ActionModal({ activeModal, onClose }) {
 
   const contentMap = {
     mission: {
-      title: 'Our Mission',
-      subtitle: 'The dating app that finds your person',
+      title: 'Our Values',
+      subtitle: 'Relationships are at the core of everything we do',
       icon: Heart,
       body: (
-        <div className="space-y-4 text-stone-25 font-modern text-[15px] leading-relaxed">
-          <p>
-            Mirror is built on the belief that anyone looking for love should be able to find it. In a world of infinite swiping, Mirror exists to help you go on great dates and find a meaningful relationship.
+        <div className="space-y-4 text-stone-25 font-modern text-[14.5px] leading-relaxed">
+          <p className="text-white font-tiempos text-xl leading-snug">
+            Relationships are at the core of everything we do.
           </p>
           <p>
-            Our core mission is reflected in every product decision: we measure our success not by time spent in the app, but by dates set up in the real world.
+            And not just the romantic kind. We can&rsquo;t accomplish really hard things alone&mdash;so we make great relationships the foundation of our teamwork.
+          </p>
+          <p>
+            We believe these three core values are what it takes to build those great relationships.
           </p>
           <div className="bg-[#242424] p-4 rounded-xl border border-stone/30 mt-4">
-            <h4 className="font-tiempos text-lg text-white mb-1">Gale-Shapley Stable Marriage Algorithm</h4>
-            <p className="text-sm text-stone-50">
-              Powered by Nobel Prize-winning matching dynamics designed to pair compatible individuals based on mutual preferences.
+            <span className="text-xs uppercase tracking-widest text-aubergine-25 font-bold block mb-1">Our Core Mission</span>
+            <p className="font-modern text-sm text-stone-50">
+              Measuring success not by time spent in the app, but by genuine, lasting human connection in the real world.
             </p>
           </div>
         </div>
@@ -33,7 +36,7 @@ export default function ActionModal({ activeModal, onClose }) {
       body: (
         <div className="space-y-4 text-stone-25 font-modern text-[15px] leading-relaxed">
           <p>
-            Loneliness has become an epidemic among Gen Z and young adults. Through our <strong>One More Hour</strong> initiative, Mirror is mobilizing resources and grants to help people spend more time connecting in real life.
+            Loneliness has become an epidemic among Gen Z and young adults. Through our <strong>One More Hour</strong> initiative, Cupid is mobilizing resources and grants to help people spend more time connecting in real life.
           </p>
           <p>
             We partner with community spaces, cultural venues, and local hubs to facilitate meaningful, tech-free human interactions.
@@ -52,7 +55,7 @@ export default function ActionModal({ activeModal, onClose }) {
       ),
     },
     labs: {
-      title: 'Mirror Labs',
+      title: 'Cupid Labs',
       subtitle: 'Building a better way to date',
       icon: Sparkles,
       body: (
@@ -61,12 +64,12 @@ export default function ActionModal({ activeModal, onClose }) {
             Our in-house team of relationship researchers, behavioral scientists, and matchmakers study what makes daters click. We analyze date outcomes, communication patterns, and connection signals.
           </p>
           <p>
-            Key findings from Mirror Labs have helped eliminate ghosting, introduce voice prompts, and develop "We Met" feedback to continually refine match quality.
+            Key findings from Cupid Labs have helped eliminate ghosting, introduce voice prompts, and develop "We Met" feedback to continually refine match quality.
           </p>
           <div className="bg-[#242424] p-4 rounded-xl border border-stone/30 mt-4">
             <span className="text-xs uppercase tracking-widest text-aubergine-25 font-bold block mb-1">Key Stat</span>
             <p className="font-tiempos text-base text-white">
-              "3 out of 4 second dates on Mirror lead to ongoing relationships."
+              "3 out of 4 second dates on Cupid lead to ongoing relationships."
             </p>
           </div>
         </div>
@@ -74,18 +77,18 @@ export default function ActionModal({ activeModal, onClose }) {
     },
     newsroom: {
       title: 'Newsroom & Press',
-      subtitle: 'Mirror in the headlines',
+      subtitle: 'Cupid in the headlines',
       icon: Award,
       body: (
         <div className="space-y-4 text-stone-25 font-modern text-[15px] leading-relaxed">
           <p>
-            Access official press releases, brand assets, executive bios, and research publications from the Mirror team.
+            Access official press releases, brand assets, executive bios, and research publications from the Cupid team.
           </p>
           <div className="space-y-2 mt-4">
             <div className="p-3 bg-[#242424] rounded-lg border border-stone/30 flex items-center justify-between">
               <div>
                 <span className="text-xs text-stone-50">September 2026</span>
-                <p className="text-white text-sm font-medium">Mirror Expands Global Connection Initiative</p>
+                <p className="text-white text-sm font-medium">Cupid Expands Global Connection Initiative</p>
               </div>
               <ExternalLink className="w-4 h-4 text-stone-50" />
             </div>
@@ -101,7 +104,7 @@ export default function ActionModal({ activeModal, onClose }) {
       ),
     },
     careers: {
-      title: 'Work at Mirror',
+      title: 'Work at Cupid',
       subtitle: "Let's work together",
       icon: Briefcase,
       body: (
@@ -122,7 +125,7 @@ export default function ActionModal({ activeModal, onClose }) {
       ),
     },
     download: {
-      title: 'Download Mirror',
+      title: 'Download Cupid',
       subtitle: 'Scan with your phone to get the app',
       icon: Download,
       body: (

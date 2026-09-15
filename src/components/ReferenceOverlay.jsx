@@ -1,15 +1,36 @@
 import React, { useState } from 'react';
 import { Sliders, Eye, EyeOff, Layers, CheckCircle2, RotateCcw } from 'lucide-react';
 
-export default function ReferenceOverlay({ zoom, setZoom, onReplayAnimation }) {
+export default function ReferenceOverlay({ zoom, setZoom, onReplayAnimation, currentPage, onNavigate }) {
   const [isOpen, setIsOpen] = useState(false);
   const [opacity, setOpacity] = useState(50);
   const [isOverlayActive, setIsOverlayActive] = useState(false);
   const [blendMode, setBlendMode] = useState('normal'); // 'normal' or 'difference'
-  const [activeSection, setActiveSection] = useState('music'); // 'music', 'labs', 'quote', or 'hero'
+  const [activeSection, setActiveSection] = useState('mission'); // default to mission or current
 
   const handleSelectSection = (section) => {
     setActiveSection(section);
+    if (section === 'mission') {
+      if (currentPage !== 'mission' && onNavigate) {
+        onNavigate('mission');
+      }
+      setTimeout(() => {
+        const el = document.getElementById('mission-section');
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 80);
+      return;
+    }
+
+    if (currentPage === 'mission' && onNavigate) {
+      let targetId = 'hero-section';
+      if (section === 'quote') targetId = 'quote-section';
+      if (section === 'labs') targetId = 'labs-section';
+      if (section === 'music' || section === 'doubledate') targetId = 'double-date-section';
+      if (section === 'footer') targetId = 'footer-section';
+      onNavigate('home', targetId);
+      return;
+    }
+
     let targetId = 'hero-section';
     if (section === 'quote') targetId = 'quote-section';
     if (section === 'labs') targetId = 'labs-section';
@@ -38,6 +59,16 @@ export default function ReferenceOverlay({ zoom, setZoom, onReplayAnimation }) {
               alt="Reference screenshot"
               className="w-full h-full object-cover object-center"
             />
+          ) : activeSection === 'mission' ? (
+            <div className="w-full h-full flex justify-center items-start">
+              <div className="w-full max-w-[1024px] pointer-events-none">
+                <img
+                  src="/images/mission_reference.png"
+                  alt="Mission reference screenshot"
+                  className="w-full h-auto object-contain object-top"
+                />
+              </div>
+            </div>
           ) : activeSection === 'footer' ? (
             <div className="w-full h-full flex justify-center items-start">
               <div className="w-full max-w-[1024px] pointer-events-none">
@@ -111,7 +142,7 @@ export default function ReferenceOverlay({ zoom, setZoom, onReplayAnimation }) {
             {/* Target Section Selector */}
             <div className="space-y-1.5">
               <span className="text-stone-25 text-[11px]">Compare Section:</span>
-              <div className="grid grid-cols-5 gap-1">
+              <div className="grid grid-cols-6 gap-1">
                 <button
                   onClick={() => handleSelectSection('footer')}
                   className={`py-1 px-1 rounded-md font-bold text-[10px] transition-colors ${
@@ -141,6 +172,16 @@ export default function ReferenceOverlay({ zoom, setZoom, onReplayAnimation }) {
                   }`}
                 >
                   Labs
+                </button>
+                <button
+                  onClick={() => handleSelectSection('mission')}
+                  className={`py-1 px-1 rounded-md font-bold text-[10px] transition-colors ${
+                    activeSection === 'mission'
+                      ? 'bg-aubergine text-white shadow-sm ring-1 ring-white/40'
+                      : 'bg-stone/30 text-stone-50 hover:text-white'
+                  }`}
+                >
+                  Mission
                 </button>
                 <button
                   onClick={() => handleSelectSection('quote')}

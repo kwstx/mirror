@@ -58,14 +58,14 @@ export default function DoubleDateSection() {
 
         {/* 4 Photos Collage Showcase */}
         <div
-          className={`relative w-full max-w-[1024px] mt-8 sm:mt-10 md:mt-[40px] px-4 md:px-0 flex justify-center items-center overflow-visible transition-all duration-1000 ${
+          className={`relative w-full max-w-[1024px] mt-8 sm:mt-10 md:mt-[44px] px-4 md:px-0 flex justify-center items-center overflow-visible transition-all duration-1000 ${
             isVisible ? 'doubledate-fade-in-up-delayed' : 'opacity-0 translate-y-10'
           }`}
         >
-          <div className="relative w-[340px] sm:w-[370px] md:w-[396px] h-auto md:h-[250px] md:translate-x-[3.5px] overflow-visible flex justify-center items-center">
+          <div className="relative w-[375px] sm:w-[420px] md:w-[465px] lg:w-[490px] max-w-full h-auto md:translate-x-[3.5px] overflow-visible flex justify-center items-center">
             <img
               src="/images/party_of_four_cards.png"
-              alt="Party of four Double Date daters smiling and laughing together"
+              alt="Daters smiling and laughing together"
               className="w-full h-auto object-contain pointer-events-none select-none transition-transform duration-500 ease-out hover:scale-[1.02]"
               loading="lazy"
             />

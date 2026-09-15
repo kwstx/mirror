@@ -1,7 +1,7 @@
 import React from 'react';
 import { X } from 'lucide-react';
 
-export default function MobileMenu({ isOpen, onClose, onOpenModal }) {
+export default function MobileMenu({ isOpen, onClose, onOpenModal, onNavigate }) {
   if (!isOpen) return null;
 
   const links = [
@@ -17,8 +17,14 @@ export default function MobileMenu({ isOpen, onClose, onOpenModal }) {
       {/* Header */}
       <div className="flex items-center justify-between pb-6 border-b border-stone/30">
         <div className="flex items-center">
-          <span className="font-tiempos font-bold text-[28px] tracking-[-0.02em] leading-none text-white select-none">
-            Mirror
+          <span
+            onClick={() => {
+              onClose();
+              if (onNavigate) onNavigate('home');
+            }}
+            className="font-tiempos font-bold text-[28px] tracking-[-0.02em] leading-none text-white select-none cursor-pointer"
+          >
+            Cupid
           </span>
         </div>
         <button
@@ -37,12 +43,20 @@ export default function MobileMenu({ isOpen, onClose, onOpenModal }) {
             key={link.id}
             onClick={() => {
               onClose();
+              if (link.id === 'mission') {
+                if (onNavigate) onNavigate('mission');
+                else onOpenModal('mission');
+                return;
+              }
               if (link.id === 'labs') {
-                const el = document.getElementById('labs-section');
-                if (el) {
-                  el.scrollIntoView({ behavior: 'smooth' });
-                  return;
+                if (onNavigate) {
+                  onNavigate('home', 'labs-section');
+                } else {
+                  const el = document.getElementById('labs-section');
+                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                  else onOpenModal('labs');
                 }
+                return;
               }
               onOpenModal(link.id);
             }}
@@ -62,10 +76,10 @@ export default function MobileMenu({ isOpen, onClose, onOpenModal }) {
           }}
           className="w-full font-modern font-bold text-center bg-white text-mirrorBlack py-3.5 rounded-full hover:bg-aubergine hover:text-white transition-colors"
         >
-          Download Mirror
+          Download Cupid
         </button>
         <p className="font-modern text-xs text-stone-50 text-center">
-          © 2026 Mirror Inc. Designed to be deleted.
+          © 2026 Cupid Inc. Designed to be deleted.
         </p>
       </div>
     </div>
