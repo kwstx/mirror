@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Heart, Sparkles, Shield, Compass, Users } from 'lucide-react';
 import FooterSection from './FooterSection';
+import ValuesCardsSection from './ValuesCardsSection';
 
 export default function MissionPage({ onNavigate, onOpenModal }) {
   useEffect(() => {
@@ -59,60 +60,17 @@ export default function MissionPage({ onNavigate, onOpenModal }) {
           </div>
         </section>
 
-        {/* Extended Values Cards Grid */}
-        <section className="relative w-full max-w-[1024px] mx-auto px-6 sm:px-12 md:px-[81px] pt-4 pb-20 box-border">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 border-t border-[#303030]">
-            
-            {/* Card 1: Authenticity */}
-            <div className="bg-[#222222] border border-[#333333] rounded-2xl p-7 hover:border-aubergine-25/50 transition-colors">
-              <div className="w-10 h-10 rounded-full bg-aubergine/40 flex items-center justify-center text-aubergine-25 mb-4">
-                <Heart className="w-5 h-5" />
-              </div>
-              <h3 className="font-tiempos text-xl font-semibold text-white mb-2">
-                Authenticity
-              </h3>
-              <p className="font-modern text-[13.5px] leading-relaxed text-stone-25">
-                We share&mdash;never hide&mdash;our words, actions, and intentions. We believe real connections begin with truth and vulnerability.
-              </p>
-            </div>
+        {/* Pixel-Perfect 3 Values Cards Section (1024x374) */}
+        <ValuesCardsSection />
 
-            {/* Card 2: Courage */}
-            <div className="bg-[#222222] border border-[#333333] rounded-2xl p-7 hover:border-aubergine-25/50 transition-colors">
-              <div className="w-10 h-10 rounded-full bg-aubergine/40 flex items-center justify-center text-aubergine-25 mb-4">
-                <Compass className="w-5 h-5" />
-              </div>
-              <h3 className="font-tiempos text-xl font-semibold text-white mb-2">
-                Courage
-              </h3>
-              <p className="font-modern text-[13.5px] leading-relaxed text-stone-25">
-                Breakthroughs require a willingness to take risks, challenge convention, and build something designed to be deleted.
-              </p>
-            </div>
-
-            {/* Card 3: Empathy */}
-            <div className="bg-[#222222] border border-[#333333] rounded-2xl p-7 hover:border-aubergine-25/50 transition-colors">
-              <div className="w-10 h-10 rounded-full bg-aubergine/40 flex items-center justify-center text-aubergine-25 mb-4">
-                <Users className="w-5 h-5" />
-              </div>
-              <h3 className="font-tiempos text-xl font-semibold text-white mb-2">
-                Empathy
-              </h3>
-              <p className="font-modern text-[13.5px] leading-relaxed text-stone-25">
-                We deeply consider others&rsquo; perspectives and recognize that everyone is human first. Dating is vulnerable; kindness is non-negotiable.
-              </p>
-            </div>
-
-          </div>
-
-          {/* Return Home Link */}
-          <div className="mt-14 text-center">
-            <button
-              onClick={() => onNavigate && onNavigate('home')}
-              className="inline-flex items-center space-x-2 font-modern text-xs font-semibold px-6 py-3 rounded-full bg-white text-mirrorBlack hover:bg-aubergine hover:text-white transition-all shadow-md active:scale-95"
-            >
-              <span>Back to Home</span>
-            </button>
-          </div>
+        {/* Back to Home Action Bar */}
+        <section className="relative w-full max-w-[1024px] mx-auto px-6 sm:px-12 md:px-[81px] pt-10 pb-16 box-border text-center">
+          <button
+            onClick={() => onNavigate && onNavigate('home')}
+            className="inline-flex items-center space-x-2 font-modern text-xs font-semibold px-6 py-3 rounded-full bg-white text-mirrorBlack hover:bg-aubergine hover:text-white transition-all shadow-md active:scale-95"
+          >
+            <span>Back to Home</span>
+          </button>
         </section>
 
       </main>

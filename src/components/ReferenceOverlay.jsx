@@ -10,12 +10,13 @@ export default function ReferenceOverlay({ zoom, setZoom, onReplayAnimation, cur
 
   const handleSelectSection = (section) => {
     setActiveSection(section);
-    if (section === 'mission') {
+    if (section === 'mission' || section === 'cards') {
       if (currentPage !== 'mission' && onNavigate) {
         onNavigate('mission');
       }
       setTimeout(() => {
-        const el = document.getElementById('mission-section');
+        const targetId = section === 'cards' ? 'values-cards-section' : 'mission-section';
+        const el = document.getElementById(targetId);
         if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }, 80);
       return;
@@ -65,6 +66,16 @@ export default function ReferenceOverlay({ zoom, setZoom, onReplayAnimation, cur
                 <img
                   src="/images/mission_reference.png"
                   alt="Mission reference screenshot"
+                  className="w-full h-auto object-contain object-top"
+                />
+              </div>
+            </div>
+          ) : activeSection === 'cards' ? (
+            <div className="w-full h-full flex justify-center items-start">
+              <div className="w-full max-w-[1024px] pointer-events-none">
+                <img
+                  src="/images/values_cards_reference.png"
+                  alt="Values cards reference screenshot"
                   className="w-full h-auto object-contain object-top"
                 />
               </div>
@@ -142,16 +153,26 @@ export default function ReferenceOverlay({ zoom, setZoom, onReplayAnimation, cur
             {/* Target Section Selector */}
             <div className="space-y-1.5">
               <span className="text-stone-25 text-[11px]">Compare Section:</span>
-              <div className="grid grid-cols-6 gap-1">
+              <div className="grid grid-cols-4 gap-1">
                 <button
-                  onClick={() => handleSelectSection('footer')}
+                  onClick={() => handleSelectSection('hero')}
                   className={`py-1 px-1 rounded-md font-bold text-[10px] transition-colors ${
-                    activeSection === 'footer'
-                      ? 'bg-white text-black shadow-sm'
+                    activeSection === 'hero'
+                      ? 'bg-aubergine text-white shadow-sm'
                       : 'bg-stone/30 text-stone-50 hover:text-white'
                   }`}
                 >
-                  Footer
+                  Hero
+                </button>
+                <button
+                  onClick={() => handleSelectSection('quote')}
+                  className={`py-1 px-1 rounded-md font-bold text-[10px] transition-colors ${
+                    activeSection === 'quote'
+                      ? 'bg-tinderRed text-white shadow-sm'
+                      : 'bg-stone/30 text-stone-50 hover:text-white'
+                  }`}
+                >
+                  Quote
                 </button>
                 <button
                   onClick={() => handleSelectSection('music')}
@@ -184,24 +205,24 @@ export default function ReferenceOverlay({ zoom, setZoom, onReplayAnimation, cur
                   Mission
                 </button>
                 <button
-                  onClick={() => handleSelectSection('quote')}
+                  onClick={() => handleSelectSection('cards')}
                   className={`py-1 px-1 rounded-md font-bold text-[10px] transition-colors ${
-                    activeSection === 'quote'
-                      ? 'bg-tinderRed text-white shadow-sm'
+                    activeSection === 'cards'
+                      ? 'bg-aubergine text-white shadow-sm ring-1 ring-white/40'
                       : 'bg-stone/30 text-stone-50 hover:text-white'
                   }`}
                 >
-                  Quote
+                  Cards
                 </button>
                 <button
-                  onClick={() => handleSelectSection('hero')}
+                  onClick={() => handleSelectSection('footer')}
                   className={`py-1 px-1 rounded-md font-bold text-[10px] transition-colors ${
-                    activeSection === 'hero'
-                      ? 'bg-aubergine text-white shadow-sm'
+                    activeSection === 'footer'
+                      ? 'bg-white text-black shadow-sm'
                       : 'bg-stone/30 text-stone-50 hover:text-white'
                   }`}
                 >
-                  Hero
+                  Footer
                 </button>
               </div>
             </div>
